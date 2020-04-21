@@ -3,9 +3,7 @@ package KlasaSpoleczna;
 public class Handlarze extends Rzemieslnicy {
 	private int PopulacjaHandlarzy;
 	
-	public Handlarze() {
-		
-	}
+	public Handlarze() { }
 	
 	@Override
 	public void Ruch(int NowyX, int NowyY) {
