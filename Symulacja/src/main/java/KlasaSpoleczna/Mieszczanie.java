@@ -3,8 +3,8 @@ package KlasaSpoleczna;
 public class Mieszczanie extends Niewolnicy {
 	private int PopulacjaMieszczan;
 	
-	public Mieszczanie() {
-		
+	public Mieszczanie(int Xpolozenie, int Ypolozenie) {
+		super(Xpolozenie,Ypolozenie);
 	}
 	
 	@Override
