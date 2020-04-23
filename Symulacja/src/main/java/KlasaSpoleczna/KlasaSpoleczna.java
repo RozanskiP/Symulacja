@@ -1,5 +1,7 @@
 package KlasaSpoleczna;
 
+import Towar.*;
+
 public abstract class KlasaSpoleczna {
 	private int Populacja;
 	private final static int DodatkowaPopulacjaPrzyAwansie = 10;
@@ -28,7 +30,7 @@ public abstract class KlasaSpoleczna {
 		this.Ypolozenie = NoweY;
 	}
 	public abstract void Handel(KlasaSpoleczna klasa);
-	public abstract void ZbieranieTowarow();
+	public abstract void ZbieranieTowarow(Towar towar);
 	
 	public int getPopulacja() { return this.Populacja; }
 	public void setPopulacja(int Populacja) { this.Populacja = Populacja; }

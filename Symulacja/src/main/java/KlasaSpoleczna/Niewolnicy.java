@@ -1,5 +1,7 @@
 package KlasaSpoleczna;
 
+import Towar.*;
+
 public class Niewolnicy extends KlasaSpoleczna {
 	
 	
@@ -44,35 +46,13 @@ public class Niewolnicy extends KlasaSpoleczna {
 			}
 	}
 	
-	@Override
-	public void ZbieranieTowarow() {
-		
-		
-	}
 	
-	public static void main(String[] args) {
-		KlasaSpoleczna niew = new Niewolnicy(3, 4);
-		niew.setJedzenie(10);
-		niew.setUbrania(5);
-		niew.setNarzedzia(3);
-		niew.setMaterialy(2);
-		KlasaSpoleczna rzem = new Rzemieslnicy(4, 4);
-		rzem.setNarzedzia(2);
-		rzem.setMaterialy(2);
-		rzem.setJedzenie(1);
-		rzem.setUbrania(5);
-		
-		
-		niew.Handel(rzem);
-		System.out.println("Niewolnicy");
-		System.out.println("Jedzenie: " + niew.getJedzenie());
-		System.out.println("Ubrania: " + niew.getUbrania());
-		System.out.println("Narzedzia: " + niew.getNarzedzia());
-		System.out.println("Materialy: " + niew.getMaterialy());
-		System.out.println("Arystokracja");
-		System.out.println("Narzedzia: " + rzem.getNarzedzia());
-		System.out.println("Materialy: " + rzem.getMaterialy());
-		System.out.println("Jedzenie: " + rzem.getJedzenie());
-		System.out.println("Ubrania: " + rzem.getUbrania());
+	public void ZbieranieTowarow(Towar towar) {
+		setJedzenie(towar.getJedzenie());
+		setUbrania(towar.getUbrania());
+		setNarzedzia(towar.getJedzenie());
+		setMaterialy(towar.getMaterialy());
+		setTowary(towar.getTowary());
+		setZloto(towar.getZloto());
 	}
 }

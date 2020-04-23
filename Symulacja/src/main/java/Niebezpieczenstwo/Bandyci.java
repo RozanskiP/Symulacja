@@ -1,5 +1,7 @@
 package Niebezpieczenstwo;
 
+import RandomoweLiczby.GeneratorRandom;
+
 public class Bandyci implements Niebezpieczenstwo {
 	
 	public Bandyci(){
@@ -8,7 +10,7 @@ public class Bandyci implements Niebezpieczenstwo {
 	
 	@Override
 	public int ZmniejszIloscPopulacja() {
-		int a = GeneratorRandom.Random(2);
+		int a = GeneratorRandom.RandomOd1(2);
 		return a;
 	}
 }

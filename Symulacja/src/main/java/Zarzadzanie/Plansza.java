@@ -1,12 +1,12 @@
 package Zarzadzanie;
 import KlasaSpoleczna.*;
+import Towar.*;
 
-import KlasaSpoleczna.KlasaSpoleczna;
 
 public class Plansza {
-	private int Xplanszy;
-	private int Yplanszy;
-	//private Towar TowarNaPlanszy;
+	private static int Xplanszy;
+	private static int Yplanszy;
+	private Towar TowarNaPlanszy;
 	//private GenerujNiebezpieczenstwo NiebezpieczenstwoNaPlanszy
 	//private Budynek warsztat;
 	//private Budynek mennica;
@@ -15,11 +15,10 @@ public class Plansza {
 	private KlasaSpoleczna ArystokrataNaPlanszy;
 	
 	public Plansza(int X, int Y) {
-		
+		this.Xplanszy = X;
+		this.Yplanszy = Y;
 	}
 	
-	public KlasaSpoleczna getNiewolnikNaPlanszy() { return NiewolnikNaPlanszy; }
-	public KlasaSpoleczna getRzemieslnikNaPlanszy() { return RzemieslnikNaPlanszy; }
-	public KlasaSpoleczna getArystokrataNaPlanszy() { return ArystokrataNaPlanszy; }
+	
 	
 }

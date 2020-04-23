@@ -1,5 +1,7 @@
 package Niebezpieczenstwo;
 
+import RandomoweLiczby.GeneratorRandom;
+
 public class GenerujNiebezpieczenstwo {
 	private int Xniebezpieczenstwo;
 	private int Yniebezpieczenstwo;
@@ -8,7 +10,7 @@ public class GenerujNiebezpieczenstwo {
 	public GenerujNiebezpieczenstwo(int X, int Y) {
 		this.Xniebezpieczenstwo = X;
 		this.Yniebezpieczenstwo = Y;
-		int a = GeneratorRandom.Random(3);
+		int a = GeneratorRandom.RandomOd1(3);
 		switch(a) {
 		case 1: Zabojca = new Bandyci();
 			break;
