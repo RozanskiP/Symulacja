@@ -10,6 +10,6 @@ public class Warsztat extends Budynek{
 	}
 	
 	public void WymanazajTowary(KlasaSpoleczna klasa) {
-		
+		klasa.getJedzenie()
 	}
 }
