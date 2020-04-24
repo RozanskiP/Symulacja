@@ -1,10 +1,10 @@
 package KlasaSpoleczna;
 
+import RandomoweLiczby.*;
 import Towar.*;
 
 public abstract class KlasaSpoleczna {
 	private int Populacja;
-	private final static int DodatkowaPopulacjaPrzyAwansie = 10;
 	private int Xpolozenie;
 	private int Ypolozenie;
 	private int Ubrania;
@@ -25,10 +25,11 @@ public abstract class KlasaSpoleczna {
 		Towary = 0;
 	}
 	
-	public void Ruch(int NoweX, int NoweY) {
-		this.Xpolozenie = NoweX;
-		this.Ypolozenie = NoweY;
+	public void Ruch() {
+		this.Xpolozenie = GeneratorRandom.RandomOd0(2)-1;
+		this.Ypolozenie = GeneratorRandom.RandomOd0(2)-1;
 	}
+	
 	public abstract void Handel(KlasaSpoleczna klasa);
 	public abstract void ZbieranieTowarow(Towar towar);
 	

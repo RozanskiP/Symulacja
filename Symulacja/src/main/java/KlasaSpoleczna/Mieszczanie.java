@@ -1,14 +1,32 @@
 package KlasaSpoleczna;
 
+import RandomoweLiczby.*;
+
 public class Mieszczanie extends Niewolnicy {
-	private int PopulacjaMieszczan;
 	
-	public Mieszczanie(int Xpolozenie, int Ypolozenie) {
-		super(Xpolozenie,Ypolozenie);
+	//Konstruktor Mieszczanie tworzacy obiekt z wieksza liczba populacji
+	// o 0.05 i dwoma ruchami
+	public Mieszczanie(KlasaSpoleczna niewolnik) {
+		//Przes³anie do konstruktora rodzica
+		super(niewolnik.getXpolozenie(),niewolnik.getYpolozenie());
+		setJedzenie(niewolnik.getJedzenie());
+		setMaterialy(niewolnik.getMaterialy());
+		setNarzedzia(niewolnik.getNarzedzia());
+		setTowary(niewolnik.getTowary());
+		setUbrania(niewolnik.getUbrania());
+		setZloto(niewolnik.getZloto());
+		//Dodatkowa Populacja
+		setPopulacja((int) (niewolnik.getPopulacja()*1.05));
 	}
 	
+	//Podwojny ruch Mieszcznina
 	@Override
-	public void Ruch(int NowyX, int NowyY) {
-		
+	public void Ruch() {
+		//Pierwszy ruch
+		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);
+		setYpolozenie(GeneratorRandom.RandomOd0(2)-1);
+		//Drugi ruch
+		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);
+		setYpolozenie(GeneratorRandom.RandomOd0(2)-1);
 	}
 }

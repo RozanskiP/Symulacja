@@ -32,6 +32,24 @@ public class Towar {
 	public int getZloto() { return Zloto; }
 	public int getUbrania() { return Ubrania; }
 	public int getJedzenie() { return Jedzenie; }
+	public void setNarzedzia(int narzedzia) {
+		Narzedzia = narzedzia;
+	}
+	public void setMaterialy(int materialy) {
+		Materialy = materialy;
+	}
+	public void setTowary(int towary) {
+		Towary = towary;
+	}
+	public void setZloto(int zloto) {
+		Zloto = zloto;
+	}
+	public void setUbrania(int ubrania) {
+		Ubrania = ubrania;
+	}
+	public void setJedzenie(int jedzenie) {
+		Jedzenie = jedzenie;
+	}
 	
 	
 	//sprawdzenie czy generuja sie w odpowiedzi sposob
