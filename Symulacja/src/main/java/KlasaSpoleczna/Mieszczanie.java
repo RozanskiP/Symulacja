@@ -23,7 +23,7 @@ public class Mieszczanie extends Niewolnicy {
 	@Override
 	public void Ruch() {
 		//Pierwszy ruch
-		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);
+		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);//zmienic aby sprawdzalo w zakresie planszy
 		setYpolozenie(GeneratorRandom.RandomOd0(2)-1);
 		//Drugi ruch
 		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);

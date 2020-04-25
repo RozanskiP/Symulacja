@@ -9,6 +9,7 @@ public class Mennica extends Budynek {
 	//Konstruktor ktory tworzy obiekt nadajac mu polozenie na planszy
 	public Mennica(int X, int Y) {
 		super(X,Y);
+		System.out.println("Stworzona Mennice");
 	}
 	
 	//Metoda ktora dodaje dodatkowe towary do nich je¿eli znajduja sie w zasiegu Mennicy

@@ -26,7 +26,7 @@ public abstract class KlasaSpoleczna {
 	}
 	
 	public void Ruch() {
-		this.Xpolozenie = GeneratorRandom.RandomOd0(2)-1;
+		this.Xpolozenie = GeneratorRandom.RandomOd0(2)-1;//zmienic aby proacowalo w zakresie
 		this.Ypolozenie = GeneratorRandom.RandomOd0(2)-1;
 	}
 	

@@ -3,10 +3,20 @@ package Zarzadzanie;
 import KlasaSpoleczna.*;
 
 public class Tura {
-	private int LicznikTur;
+	private int LicznikTur = 0;
 	Plansza plansza;
 	
 	public Tura() {
+		LicznikTur = 0;
+		plansza = new Plansza(plansza.getzapisOdczyt().getWielkoscPlanszyX(), plansza.getzapisOdczyt().getWielkoscPlanszyY());
+	}
+	
+	
+	public int getLicznikTur() { return LicznikTur; }
+	public void setLicznikTur(int licznikTur) { LicznikTur = licznikTur; }
+	public Plansza getPlansza() { return plansza; }
+
+	public void WartosciPoczatkowe() {
 		
 	}
 	
@@ -35,6 +45,10 @@ public class Tura {
 	}
 	
 	public void Wygrana() {
+		
+	}
+	
+	public void AwansSpoleczny() {
 		
 	}
 	
