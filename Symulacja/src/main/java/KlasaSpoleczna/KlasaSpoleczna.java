@@ -13,6 +13,8 @@ public abstract class KlasaSpoleczna {
 	private int Materialy;
 	private int Zloto;
 	private int Towary;
+	private int LicznikTowarow;
+	private int LicznikNiebezpieczenstw;
 	
 	public KlasaSpoleczna(int X, int Y){
 		Xpolozenie = X;
@@ -23,6 +25,8 @@ public abstract class KlasaSpoleczna {
 		Materialy = 0;
 		Zloto = 0;
 		Towary = 0;
+		LicznikTowarow = 0;
+		LicznikNiebezpieczenstw = 0;
 	}
 	
 	public void Ruch() {
@@ -32,6 +36,7 @@ public abstract class KlasaSpoleczna {
 	
 	public abstract void Handel(KlasaSpoleczna klasa);
 	public abstract void ZbieranieTowarow(Towar towar);
+	public abstract String toString();
 	
 	public int getPopulacja() { return this.Populacja; }
 	public void setPopulacja(int Populacja) { this.Populacja = Populacja; }
@@ -51,5 +56,22 @@ public abstract class KlasaSpoleczna {
 	public void setZloto(int zloto) { Zloto = zloto; }
 	public int getTowary() { return Towary;}
 	public void setTowary(int towary) { Towary = towary; }
+
+	public int getLicznikTowarow() {
+		return LicznikTowarow;
+	}
+
+	public void setLicznikTowarow(int licznikTowarow) {
+		LicznikTowarow = licznikTowarow;
+	}
+
+	public int getLicznikNiebezpieczenstw() {
+		return LicznikNiebezpieczenstw;
+	}
+
+	public void setLicznikNiebezpieczenstw(int licznikNiebezpieczenstw) {
+		LicznikNiebezpieczenstw = licznikNiebezpieczenstw;
+	}
+	
 
 }

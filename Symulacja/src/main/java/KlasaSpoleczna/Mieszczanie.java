@@ -19,6 +19,11 @@ public class Mieszczanie extends Niewolnicy {
 		setPopulacja((int) (niewolnik.getPopulacja()*1.05));
 	}
 	
+	@Override
+	public String toString() {
+		return "Mieszczanie";
+	}
+	
 	//Podwojny ruch Mieszcznina
 	@Override
 	public void Ruch() {

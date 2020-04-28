@@ -9,6 +9,11 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 		super(Xrzemieslnicy, Yrzemieslnicy);
 	}
 	
+	@Override
+	public String toString() {
+		return "Rzemieslnicy";
+	}
+	
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 

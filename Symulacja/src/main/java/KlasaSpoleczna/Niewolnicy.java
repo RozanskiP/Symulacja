@@ -9,6 +9,11 @@ public class Niewolnicy extends KlasaSpoleczna {
 		super(Xniewolnicy, Yniewolnicy);
 	}
 	
+	@Override
+	public String toString() {
+		return "Niewolnicy";
+	}
+	
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 

@@ -19,6 +19,11 @@ public class Handlarze extends Rzemieslnicy {
 		setPopulacja((int)(rzemieslnik.getPopulacja()*1.05));
 	}
 	
+	@Override
+	public String toString() {
+		return "Handlarze";
+	}
+	
 	//Podwojny ruch Handlarza
 	@Override
 	public void Ruch() {

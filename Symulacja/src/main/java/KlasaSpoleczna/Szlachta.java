@@ -19,6 +19,11 @@ public class Szlachta extends Arystokracja {
 		setPopulacja((int)(arystokrata.getPopulacja()*1.05));
 	}
 	
+	@Override
+	public String toString() {
+		return "Szlachta";
+	}
+	
 	//Podwojny ruch Szlachcia
 	@Override
 	public void Ruch() {

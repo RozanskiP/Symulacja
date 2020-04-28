@@ -4,6 +4,9 @@ import KlasaSpoleczna.*;
 
 import Niebezpieczenstwo.*;
 import Towar.*;
+
+import java.io.IOException;
+
 import Budynki.*;
 import RandomoweLiczby.*;
 
@@ -11,15 +14,15 @@ import RandomoweLiczby.*;
 public class Plansza {
 	private int Xplanszy;
 	private int Yplanszy;
-	private int LiczbaTowarow;
+	private static int LiczbaTowarow;
 	private Towar TowarNaPlanszy[];
-	private int LiczbaNiebezpieczenstw;
+	private static int LiczbaNiebezpieczenstw;
 	private GenerujNiebezpieczenstwo NiebezpieczenstwoNaPlanszy[];
 	private Budynek WarsztatNaPlanszy;
 	private Budynek MennicaNaPlanszy;
-	private KlasaSpoleczna NiewolnikNaPlanszy;
-	private KlasaSpoleczna RzemieslnikNaPlanszy;
-	private KlasaSpoleczna ArystokrataNaPlanszy;
+	private static KlasaSpoleczna NiewolnikNaPlanszy;
+	private static KlasaSpoleczna RzemieslnikNaPlanszy;
+	private static KlasaSpoleczna ArystokrataNaPlanszy;
 	private ZapisOdczyt zapisodczyt;
 	
 	
@@ -28,11 +31,12 @@ public class Plansza {
 		this.Yplanszy = Y;
 		LiczbaTowarow = -1;
 		LiczbaNiebezpieczenstw = -1;
-		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyX()), GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyY()));
-		RzemieslnikNaPlanszy = new Rzemieslnicy(GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyX()), GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyY()));
-		ArystokrataNaPlanszy = new Arystokracja(GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyX()), GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyY()));
-		WarsztatNaPlanszy = new Warsztat(GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyX()),GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyY()));
-		MennicaNaPlanszy = new Mennica(GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyX()),GeneratorRandom.RandomOd1(zapisodczyt.getWielkoscPlanszyY()));
+		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
+		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
+		RzemieslnikNaPlanszy = new Rzemieslnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
+		ArystokrataNaPlanszy = new Arystokracja(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
+		WarsztatNaPlanszy = new Warsztat(GeneratorRandom.RandomOd1(Xplanszy),GeneratorRandom.RandomOd1(Yplanszy));
+		MennicaNaPlanszy = new Mennica(GeneratorRandom.RandomOd1(Xplanszy),GeneratorRandom.RandomOd1(Yplanszy));
 	}
 	public ZapisOdczyt getzapisOdczyt() { return zapisodczyt; }
 	public int getXplanszy() { return Xplanszy; }
@@ -46,15 +50,15 @@ public class Plansza {
 	public void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebez) {
 		NiebezpieczenstwoNaPlanszy[++LiczbaNiebezpieczenstw] = niebez;
 	}
-	public int getLiczbaTowarow() { return LiczbaTowarow; }
-	public int getLiczbaNiebezpieczenstw() { return LiczbaNiebezpieczenstw; }
+	public static int getLiczbaTowarow() { return LiczbaTowarow; }
+	public static int getLiczbaNiebezpieczenstw() { return LiczbaNiebezpieczenstw; }
 	
 	public Budynek getWarsztatNaPlanszy() { return WarsztatNaPlanszy; }
 	public Budynek getMennicaNaPlanszy() { return MennicaNaPlanszy; }
 	
-	public KlasaSpoleczna getNiewolnikNaPLanszy() { return NiewolnikNaPlanszy; }
-	public KlasaSpoleczna getRzemieslnikNaPlanszy() { return RzemieslnikNaPlanszy; }
-	public KlasaSpoleczna getArystokrataNaPlanszy() { return ArystokrataNaPlanszy; }
+	public static KlasaSpoleczna getNiewolnikNaPLanszy() { return NiewolnikNaPlanszy; }
+	public static KlasaSpoleczna getRzemieslnikNaPlanszy() { return RzemieslnikNaPlanszy; }
+	public static KlasaSpoleczna getArystokrataNaPlanszy() { return ArystokrataNaPlanszy; }
 	public void setNiewolnikNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		NiewolnikNaPlanszy = NowaKlasa;
 	}
@@ -64,4 +68,12 @@ public class Plansza {
 	public void setArystokrataNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		ArystokrataNaPlanszy = NowaKlasa;
 	}
+	
+	/*
+	public static void main(String[] args) throws IOException{
+		ZapisOdczyt odcz = new ZapisOdczyt();
+		odcz.Odczyt();
+		Plansza obj = new Plansza(odcz.getWielkoscPlanszyX(),odcz.getWielkoscPlanszyY());
+	}
+	*/
 }
