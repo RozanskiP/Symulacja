@@ -18,7 +18,7 @@ public class ZapisOdczyt {
 	private int PopulacjaStartowaNiewolnicy;
 	private int PopulacjaStartowaRzemieslnicy;
 	private int PopulacjaStartowaArystokracja;
-	private int POPULACJAMAX;
+	private static int POPULACJAMAX;
 	private KlasaSpoleczna WygranaKlasa = new Niewolnicy(10,10);
 	private KlasaSpoleczna Miejsce2 = new Rzemieslnicy(10,10);
 	private KlasaSpoleczna Miejsce3 = new Arystokracja(10,10);
@@ -107,7 +107,7 @@ public class ZapisOdczyt {
 	public int getPopulacjaStartowaArystokracja() {
 		return PopulacjaStartowaArystokracja;
 	}
-	public int getPOPULACJAMAX() {
+	public static int getPOPULACJAMAX() {
 		return POPULACJAMAX;
 	}
 }

@@ -4,31 +4,27 @@ import KlasaSpoleczna.*;
 
 import Niebezpieczenstwo.*;
 import Towar.*;
-
-import java.io.IOException;
-
 import Budynki.*;
 import RandomoweLiczby.*;
 
 
 public class Plansza {
-	private int Xplanszy;
-	private int Yplanszy;
-	private static int LiczbaTowarow;
-	private Towar TowarNaPlanszy[];
-	private static int LiczbaNiebezpieczenstw;
+	private static int Xplanszy;
+	private static int Yplanszy;
+	private static int LiczbaTowarow= -1;
+	private static Towar TowarNaPlanszy[];
+	private static int LiczbaNiebezpieczenstw = -1;
 	private GenerujNiebezpieczenstwo NiebezpieczenstwoNaPlanszy[];
 	private Budynek WarsztatNaPlanszy;
 	private Budynek MennicaNaPlanszy;
 	private static KlasaSpoleczna NiewolnikNaPlanszy;
 	private static KlasaSpoleczna RzemieslnikNaPlanszy;
 	private static KlasaSpoleczna ArystokrataNaPlanszy;
-	private ZapisOdczyt zapisodczyt;
 	
 	
 	public Plansza(int X, int Y) {
-		this.Xplanszy = X;
-		this.Yplanszy = Y;
+		Xplanszy = X;
+		Yplanszy = Y;
 		LiczbaTowarow = -1;
 		LiczbaNiebezpieczenstw = -1;
 		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
@@ -38,11 +34,11 @@ public class Plansza {
 		WarsztatNaPlanszy = new Warsztat(GeneratorRandom.RandomOd1(Xplanszy),GeneratorRandom.RandomOd1(Yplanszy));
 		MennicaNaPlanszy = new Mennica(GeneratorRandom.RandomOd1(Xplanszy),GeneratorRandom.RandomOd1(Yplanszy));
 	}
-	public ZapisOdczyt getzapisOdczyt() { return zapisodczyt; }
-	public int getXplanszy() { return Xplanszy; }
-	public int getYplanszy() { return Yplanszy; }
 	
-	public Towar[] getTowarNaPlanszy() { return TowarNaPlanszy; }
+	public static int getXplanszy() { return Xplanszy; }
+	public static int getYplanszy() { return Yplanszy; }
+	
+	public static Towar getTowarNaPlanszy(int i) { return TowarNaPlanszy[i]; }
 	public void setTowarNaPlanszy(Towar towar) {
 		TowarNaPlanszy[++LiczbaTowarow] = towar;
 	}

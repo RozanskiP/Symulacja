@@ -1,6 +1,7 @@
 package KlasaSpoleczna;
 
 import RandomoweLiczby.*;
+import Zarzadzanie.Plansza;
 
 public class Szlachta extends Arystokracja {
 	
@@ -27,11 +28,26 @@ public class Szlachta extends Arystokracja {
 	//Podwojny ruch Szlachcia
 	@Override
 	public void Ruch() {
-		//Pierwszy ruch
-		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);
-		setYpolozenie(GeneratorRandom.RandomOd0(2)-1);
-		//Drugi ruch
-		setXpolozenie(GeneratorRandom.RandomOd0(2)-1);
-		setYpolozenie(GeneratorRandom.RandomOd0(2)-1);	
+		int a = getXpolozenie();
+		int b = getYpolozenie();
+		//pierwszy ruch
+		do {
+			a = a + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(a >= 1 && a <= Plansza.getXplanszy()));
+		
+		do {
+			b = b + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(b >= 1 && b <= Plansza.getYplanszy()));
+		//drugi ruch
+		do {
+			a = a + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(a >= 1 && a <= Plansza.getXplanszy()));
+		
+		do {
+			b = b + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(b >= 1 && b <= Plansza.getYplanszy()));
+		
+		setXpolozenie(a);
+		setYpolozenie(b);
 	}
 }

@@ -2,6 +2,7 @@ package KlasaSpoleczna;
 
 import RandomoweLiczby.*;
 import Towar.*;
+import Zarzadzanie.Plansza;
 
 public abstract class KlasaSpoleczna {
 	private int Populacja;
@@ -30,8 +31,20 @@ public abstract class KlasaSpoleczna {
 	}
 	
 	public void Ruch() {
-		this.Xpolozenie = GeneratorRandom.RandomOd0(2)-1;//zmienic aby proacowalo w zakresie
-		this.Ypolozenie = GeneratorRandom.RandomOd0(2)-1;
+		
+		int a = Xpolozenie;
+		int b = Ypolozenie;
+		
+		do {
+			a = a + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(a >= 1 && a <= Plansza.getXplanszy()));
+		
+		do {
+			b = b + GeneratorRandom.RandomOd0(3)-1;
+		}while(!(b >= 1 && b <= Plansza.getYplanszy()));
+		
+		this.Xpolozenie = a;
+		this.Ypolozenie = b;
 	}
 	
 	public abstract void Handel(KlasaSpoleczna klasa);
