@@ -1,7 +1,8 @@
 package Zarzadzanie;
 
-import KlasaSpoleczna.*;
+import java.util.*;
 
+import KlasaSpoleczna.*;
 import Niebezpieczenstwo.*;
 import Towar.*;
 import Budynki.*;
@@ -12,9 +13,9 @@ public class Plansza {
 	private static int Xplanszy;
 	private static int Yplanszy;
 	private static int LiczbaTowarow= -1;
-	private static Towar TowarNaPlanszy[];
+	private static ArrayList<Towar> TowarNaPlanszy;
 	private static int LiczbaNiebezpieczenstw = -1;
-	private GenerujNiebezpieczenstwo NiebezpieczenstwoNaPlanszy[];
+	private ArrayList<GenerujNiebezpieczenstwo> NiebezpieczenstwoNaPlanszy;
 	private Budynek WarsztatNaPlanszy;
 	private Budynek MennicaNaPlanszy;
 	private static KlasaSpoleczna NiewolnikNaPlanszy;
@@ -25,9 +26,10 @@ public class Plansza {
 	public Plansza(int X, int Y) {
 		Xplanszy = X;
 		Yplanszy = Y;
-		LiczbaTowarow = -1;
-		LiczbaNiebezpieczenstw = -1;
-		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
+		TowarNaPlanszy = new ArrayList<>();
+		LiczbaTowarow = 0;
+		NiebezpieczenstwoNaPlanszy = new ArrayList<>();
+		LiczbaNiebezpieczenstw = 0;
 		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
 		RzemieslnikNaPlanszy = new Rzemieslnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
 		ArystokrataNaPlanszy = new Arystokracja(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
@@ -38,13 +40,13 @@ public class Plansza {
 	public static int getXplanszy() { return Xplanszy; }
 	public static int getYplanszy() { return Yplanszy; }
 	
-	public static Towar getTowarNaPlanszy(int i) { return TowarNaPlanszy[i]; }
+	public static ArrayList<Towar> getTowarNaPlanszy() { return TowarNaPlanszy; }
 	public void setTowarNaPlanszy(Towar towar) {
-		TowarNaPlanszy[++LiczbaTowarow] = towar;
+		TowarNaPlanszy.add(towar);
 	}
-	public GenerujNiebezpieczenstwo[] getNiebezpieczenstwoNaPlanszy() { return NiebezpieczenstwoNaPlanszy; }
-	public void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebez) {
-		NiebezpieczenstwoNaPlanszy[++LiczbaNiebezpieczenstw] = niebez;
+	public ArrayList<GenerujNiebezpieczenstwo> getNiebezpieczenstwoNaPlanszy() { return NiebezpieczenstwoNaPlanszy; }
+	public void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebezpieczenstwo) {
+		NiebezpieczenstwoNaPlanszy.add(niebezpieczenstwo);
 	}
 	public static int getLiczbaTowarow() { return LiczbaTowarow; }
 	public static int getLiczbaNiebezpieczenstw() { return LiczbaNiebezpieczenstw; }
