@@ -9,7 +9,7 @@ import Budynki.*;
 
 public class Tura {
 	private static int LicznikTur = 0;
-	//private Plansza plansza;
+	
 	
 	public Tura() {
 		LicznikTur = 0;
@@ -53,7 +53,7 @@ public class Tura {
 				if(Plansza.getNiewolnikNaPLanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getNiewolnikNaPLanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getNiewolnikNaPLanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getNiewolnikNaPLanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getNiewolnikNaPLanszy().ZbieranieTowarow(towar);
-						System.out.println("ZBIERAM Niewolnik");
+						//System.out.println("ZBIERAM Niewolnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getNiewolnikNaPLanszy().setLicznikTowarow(Plansza.getNiewolnikNaPLanszy().getLicznikTowarow()+1);
 						i--;
@@ -63,7 +63,7 @@ public class Tura {
 				if(Plansza.getRzemieslnikNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getRzemieslnikNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getRzemieslnikNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getRzemieslnikNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getRzemieslnikNaPlanszy().ZbieranieTowarow(towar);
-						System.out.println("ZBIERAM Rzemieslnik");
+						//System.out.println("ZBIERAM Rzemieslnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getRzemieslnikNaPlanszy().setLicznikTowarow(Plansza.getRzemieslnikNaPlanszy().getLicznikTowarow()+1);
 						i--;
@@ -73,7 +73,7 @@ public class Tura {
 				if(Plansza.getArystokrataNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getArystokrataNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getArystokrataNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getArystokrataNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getArystokrataNaPlanszy().ZbieranieTowarow(towar);
-						System.out.println("ZBIERAM Arystokrata");
+						//System.out.println("ZBIERAM Arystokrata");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getArystokrataNaPlanszy().setLicznikTowarow(Plansza.getArystokrataNaPlanszy().getLicznikTowarow()+1);
 						i--;
@@ -149,7 +149,7 @@ public class Tura {
 		}
 		
 	}
-	
+	//Niesprawdzona metoda
 	public void BudynkiNaPlanszy() {
 		for(Towar towar : Plansza.getTowarNaPlanszy()) {
 			Warsztat.WymanazajTowary(towar);
@@ -232,7 +232,7 @@ public class Tura {
 			Plansza.setArystokrataNaPlanszy(new Szlachta(Plansza.getArystokrataNaPlanszy()));
 		}
 	}
-	
+	/*
 	public static void main(String[] args) throws IOException{
 		Plansza pla = new Plansza(10, 11);
 		Tura tura = new Tura();
@@ -262,7 +262,7 @@ public class Tura {
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
-		/*
+		
 		System.out.println("Po zebraniu: Rzemieslnik");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
@@ -277,7 +277,7 @@ public class Tura {
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
+		
 		
 		//System.out.println(GenerujNiebezpieczenstwo.getXniebezpieczenstwo());
 		//System.out.println(GenerujNiebezpieczenstwo.getYniebezpieczenstwo());
@@ -298,5 +298,5 @@ public class Tura {
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 	}
-	
+	*/
 }

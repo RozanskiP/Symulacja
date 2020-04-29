@@ -15,7 +15,7 @@ public class Niewolnicy extends KlasaSpoleczna {
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 
-				System.out.println("Handlujemy");
+				//System.out.println("Handlujemy");
 				
 				if(klasa instanceof Rzemieslnicy || klasa instanceof Handlarze) {
 					while(klasa.getJedzenie() != 0 && getNarzedzia() != 0) {

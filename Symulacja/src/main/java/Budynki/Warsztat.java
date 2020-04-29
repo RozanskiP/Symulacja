@@ -9,7 +9,7 @@ public class Warsztat extends Budynek{
 	//Konstruktor ktory tworzy obiekt nadajac mu polozenie na planszy
 	public Warsztat(int X, int Y) {
 		super(X,Y);
-		System.out.println("Stworzona Warsztat");
+		//System.out.println("Stworzona Warsztat");
 	}
 	
 	//Metoda ktora wymnaza towar ktory znajduje sie w zasiegu Warsztatu
