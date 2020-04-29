@@ -3,14 +3,14 @@ package Niebezpieczenstwo;
 import RandomoweLiczby.GeneratorRandom;
 
 public class GenerujNiebezpieczenstwo {
-	private int Xniebezpieczenstwo;
-	private int Yniebezpieczenstwo;
-	private Niebezpieczenstwo Zabojca;
+	private static int Xniebezpieczenstwo;
+	private static int Yniebezpieczenstwo;
+	private static Niebezpieczenstwo Zabojca;
 	
 	public GenerujNiebezpieczenstwo(int X, int Y) {
-		this.Xniebezpieczenstwo = X;
-		this.Yniebezpieczenstwo = Y;
-		int a = GeneratorRandom.RandomOd1(3);
+		Xniebezpieczenstwo = X;
+		Yniebezpieczenstwo = Y;
+		int a = 1; // GeneratorRandom.RandomOd1(3);
 		switch(a) {
 		case 1: Zabojca = new Bandyci();
 			break;
@@ -22,17 +22,19 @@ public class GenerujNiebezpieczenstwo {
 			break;
 		}
 	}
-	public Niebezpieczenstwo getZabojca() { return Zabojca; }
+	public static Niebezpieczenstwo getZabojca() { return Zabojca; }
 	
 	public void setXniebezpieczenstwo(int xniebezpieczenstwo) { Xniebezpieczenstwo = xniebezpieczenstwo; }
-	public int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
+	public static int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
 	public void setYniebezpieczenstwo(int yniebezpieczenstwo) { Yniebezpieczenstwo = yniebezpieczenstwo; }
-	public int getYniebezpieczenstwo() { return Yniebezpieczenstwo; }
+	public static int getYniebezpieczenstwo() { return Yniebezpieczenstwo; }
 	
+	/*
 	public static void main(String[] args) {
 		GenerujNiebezpieczenstwo obj = new GenerujNiebezpieczenstwo(5, 10);
 		int PopulacjaKotkow = 10;
 		 PopulacjaKotkow = PopulacjaKotkow - obj.getZabojca().ZmniejszIloscPopulacja();
 		 System.out.println(PopulacjaKotkow);
 	}
+	*/
 }

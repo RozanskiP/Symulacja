@@ -113,11 +113,18 @@ public class Tura {
 	}
 	
 	public void Zabojstwa() {
-		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
+		//for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
 			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
-				niebez.
+				int minusNiewolnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getNiewolnikNaPLanszy());
+				
+				Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - minusNiewolnik);
+				Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - minusNiewolnik);
+				
+				
+				
+				
 			}
-		}
+		//}
 		
 	}
 	
