@@ -18,6 +18,8 @@ public class Szlachta extends Arystokracja {
 		setZloto(arystokrata.getZloto());
 		//Dodatkowa Populacja
 		setPopulacja((int)(arystokrata.getPopulacja()*1.05));
+		setLicznikTowarow(arystokrata.getTowary());
+		setLicznikNiebezpieczenstw(arystokrata.getLicznikNiebezpieczenstw());
 	}
 	
 	@Override

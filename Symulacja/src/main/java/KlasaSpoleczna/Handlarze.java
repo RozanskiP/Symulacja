@@ -18,6 +18,8 @@ public class Handlarze extends Rzemieslnicy {
 		setZloto(rzemieslnik.getZloto());
 		//Dodatkowa Populacja
 		setPopulacja((int)(rzemieslnik.getPopulacja()*1.05));
+		setLicznikTowarow(rzemieslnik.getTowary());
+		setLicznikNiebezpieczenstw(rzemieslnik.getLicznikNiebezpieczenstw());
 	}
 	
 	@Override

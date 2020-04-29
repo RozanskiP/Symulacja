@@ -46,11 +46,13 @@ public class Tura {
 	public void ZbierzTowaryKlas() {
 		for(int i=0;i<Plansza.getTowarNaPlanszy().size();i++) {
 			for(Towar towar : Plansza.getTowarNaPlanszy()) {
+				
 				if(Plansza.getNiewolnikNaPLanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getNiewolnikNaPLanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getNiewolnikNaPLanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getNiewolnikNaPLanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getNiewolnikNaPLanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Niewolnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
+						Plansza.getNiewolnikNaPLanszy().setLicznikTowarow(Plansza.getNiewolnikNaPLanszy().getLicznikTowarow()+1);
 						i--;
 						break;
 					}
@@ -60,6 +62,7 @@ public class Tura {
 						Plansza.getRzemieslnikNaPlanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Rzemieslnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
+						Plansza.getRzemieslnikNaPlanszy().setLicznikTowarow(Plansza.getRzemieslnikNaPlanszy().getLicznikTowarow()+1);
 						i--;
 						break;
 					}
@@ -69,10 +72,10 @@ public class Tura {
 						Plansza.getArystokrataNaPlanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Arystokrata");
 						Plansza.getTowarNaPlanszy().remove(towar);
+						Plansza.getArystokrataNaPlanszy().setLicznikTowarow(Plansza.getArystokrataNaPlanszy().getLicznikTowarow()+1);
 						i--;
 						break;
 					}
-			
 			}
 	}
 }
@@ -85,23 +88,44 @@ public class Tura {
 		
 	}
 	
-	public void Wygrana() {
+	public boolean Wygrana() {
+		if(SprawdzanieWygranej.WygranaNiewolnikow()) {
+			ZapisOdczyt.setWygranaKlasa(Plansza.getNiewolnikNaPLanszy());
+			if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= Plansza.getArystokrataNaPlanszy().getPopulacja()) {
+				ZapisOdczyt.setMiejsce2(Plansza.ge);
+			}
+			
+			
+			return true;
+		}
+		if(SprawdzanieWygranej.WygranaRzemieslnikow()) {
+			
+			
+			
+			return true;
+		}
+		if(SprawdzanieWygranej.WygranaArystokracji()) {
+			
+			
+			
+			return true;
+		}
 		
+		return false;
 	}
 	
 	public void AwansSpoleczny() {
-		System.out.println("POPULACJAMAX: " + ZapisOdczyt.getPOPULACJAMAX());
-		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
 			System.out.println("Awans Niewolnikow");
 			Plansza.setNiewolnikNaPlanszy(new Mieszczanie(Plansza.getNiewolnikNaPLanszy()));
 		}
 			
-		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
 			System.out.println("Awans Rzemieslnikow");
 			Plansza.setRzemieslnikNaPlanszy(new Handlarze(Plansza.getRzemieslnikNaPlanszy()));
 		}
 			
-		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
 			System.out.println("Awans Arystokracji");
 			Plansza.setArystokrataNaPlanszy(new Szlachta(Plansza.getArystokrataNaPlanszy()));
 		}

@@ -2,7 +2,7 @@ package Zarzadzanie;
 
 public class SprawdzanieWygranej {
 
-	public boolean WygranaNiewolnikow() {
+	public static boolean WygranaNiewolnikow() {
 		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
 		}
@@ -11,7 +11,7 @@ public class SprawdzanieWygranej {
 		}
 	}
 	
-	public boolean WygranaRzemieslnikow() {
+	public static boolean WygranaRzemieslnikow() {
 		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
 		}
@@ -20,7 +20,7 @@ public class SprawdzanieWygranej {
 		}
 	}
 	
-	public boolean WygranaArystokracji() {
+	public static boolean WygranaArystokracji() {
 		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
 		}

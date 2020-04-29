@@ -19,9 +19,9 @@ public class ZapisOdczyt {
 	private int PopulacjaStartowaRzemieslnicy;
 	private int PopulacjaStartowaArystokracja;
 	private static int POPULACJAMAX;
-	private KlasaSpoleczna WygranaKlasa = new Niewolnicy(10,10);
-	private KlasaSpoleczna Miejsce2 = new Rzemieslnicy(10,10);
-	private KlasaSpoleczna Miejsce3 = new Arystokracja(10,10);
+	private static KlasaSpoleczna WygranaKlasa;
+	private KlasaSpoleczna Miejsce2;
+	private KlasaSpoleczna Miejsce3;
 	private int WygranaKlasaPopulacja;
 	private int Miejsce2Populacja;
 	private int Miejsce3Populacja;
@@ -64,6 +64,7 @@ public class ZapisOdczyt {
 		
 		System.out.println(liczby);
 	}
+
 	//Zapisywanie danych po skoñczonej symulacji
 	public void Zapis() throws FileNotFoundException {
 		PrintWriter zapis = new PrintWriter("DaneKoncowe.txt");
@@ -109,5 +110,41 @@ public class ZapisOdczyt {
 	}
 	public static int getPOPULACJAMAX() {
 		return POPULACJAMAX;
+	}
+	public KlasaSpoleczna getWygranaKlasa() {
+		return WygranaKlasa;
+	}
+	public static void setWygranaKlasa(KlasaSpoleczna wygranaKlasa) {
+		WygranaKlasa = wygranaKlasa;
+	}
+	public KlasaSpoleczna getMiejsce2() {
+		return Miejsce2;
+	}
+	public void setMiejsce2(KlasaSpoleczna miejsce2) {
+		Miejsce2 = miejsce2;
+	}
+	public KlasaSpoleczna getMiejsce3() {
+		return Miejsce3;
+	}
+	public void setMiejsce3(KlasaSpoleczna miejsce3) {
+		Miejsce3 = miejsce3;
+	}
+	public int getWygranaKlasaPopulacja() {
+		return WygranaKlasaPopulacja;
+	}
+	public void setWygranaKlasaPopulacja(int wygranaKlasaPopulacja) {
+		WygranaKlasaPopulacja = wygranaKlasaPopulacja;
+	}
+	public int getMiejsce2Populacja() {
+		return Miejsce2Populacja;
+	}
+	public void setMiejsce2Populacja(int miejsce2Populacja) {
+		Miejsce2Populacja = miejsce2Populacja;
+	}
+	public int getMiejsce3Populacja() {
+		return Miejsce3Populacja;
+	}
+	public void setMiejsce3Populacja(int miejsce3Populacja) {
+		Miejsce3Populacja = miejsce3Populacja;
 	}
 }

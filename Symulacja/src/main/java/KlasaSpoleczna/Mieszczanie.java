@@ -17,7 +17,8 @@ public class Mieszczanie extends Niewolnicy {
 		setUbrania(niewolnik.getUbrania());
 		setZloto(niewolnik.getZloto());
 		//Dodatkowa Populacja
-		setPopulacja((int) (niewolnik.getPopulacja()*1.05));
+		setPopulacja((int) (niewolnik.getPopulacja()*1.05));setLicznikTowarow(niewolnik.getTowary());
+		setLicznikNiebezpieczenstw(niewolnik.getLicznikNiebezpieczenstw());
 	}
 	
 	@Override
