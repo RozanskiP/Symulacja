@@ -1,5 +1,7 @@
 package Zarzadzanie;
 
+import java.io.IOException;
+
 import KlasaSpoleczna.*;
 import Towar.Towar;
 
@@ -31,7 +33,14 @@ public class Tura {
 	}
 	
 	public void HandelKlas() {
+		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
+		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getArystokrataNaPlanszy());
 		
+		Plansza.getRzemieslnikNaPlanszy().Handel(Plansza.getNiewolnikNaPLanszy());
+		Plansza.getRzemieslnikNaPlanszy().Handel(Plansza.getArystokrataNaPlanszy());
+		
+		Plansza.getArystokrataNaPlanszy().Handel(Plansza.getNiewolnikNaPLanszy());
+		Plansza.getArystokrataNaPlanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
 	}
 	
 	public void ZbierzTowaryKlas() {
@@ -39,12 +48,7 @@ public class Tura {
 			for(Towar towar : Plansza.getTowarNaPlanszy()) {
 				if(Plansza.getNiewolnikNaPLanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getNiewolnikNaPLanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getNiewolnikNaPLanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getNiewolnikNaPLanszy().getYpolozenie()+1 >= towar.getYtowar()) {
-						Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie()+towar.getJedzenie());
-						Plansza.getNiewolnikNaPLanszy().setMaterialy(Plansza.getNiewolnikNaPLanszy().getMaterialy()+towar.getMaterialy());
-						Plansza.getNiewolnikNaPLanszy().setNarzedzia(Plansza.getNiewolnikNaPLanszy().getNarzedzia()+towar.getNarzedzia());
-						Plansza.getNiewolnikNaPLanszy().setTowary(Plansza.getNiewolnikNaPLanszy().getTowary()+towar.getTowary());
-						Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania()+towar.getUbrania());
-						Plansza.getNiewolnikNaPLanszy().setZloto(Plansza.getNiewolnikNaPLanszy().getZloto()+towar.getZloto());
+						Plansza.getNiewolnikNaPLanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Niewolnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						i--;
@@ -53,12 +57,7 @@ public class Tura {
 				
 				if(Plansza.getRzemieslnikNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getRzemieslnikNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getRzemieslnikNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getRzemieslnikNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
-						Plansza.getRzemieslnikNaPlanszy().setJedzenie(Plansza.getRzemieslnikNaPlanszy().getJedzenie()+towar.getJedzenie());
-						Plansza.getRzemieslnikNaPlanszy().setMaterialy(Plansza.getRzemieslnikNaPlanszy().getMaterialy()+towar.getMaterialy());
-						Plansza.getRzemieslnikNaPlanszy().setNarzedzia(Plansza.getRzemieslnikNaPlanszy().getNarzedzia()+towar.getNarzedzia());
-						Plansza.getRzemieslnikNaPlanszy().setTowary(Plansza.getRzemieslnikNaPlanszy().getTowary()+towar.getTowary());
-						Plansza.getRzemieslnikNaPlanszy().setUbrania(Plansza.getRzemieslnikNaPlanszy().getUbrania()+towar.getUbrania());
-						Plansza.getRzemieslnikNaPlanszy().setZloto(Plansza.getRzemieslnikNaPlanszy().getZloto()+towar.getZloto());
+						Plansza.getRzemieslnikNaPlanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Rzemieslnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						i--;
@@ -67,12 +66,7 @@ public class Tura {
 				
 				if(Plansza.getArystokrataNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getArystokrataNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getArystokrataNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getArystokrataNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
-						Plansza.getArystokrataNaPlanszy().setJedzenie(Plansza.getArystokrataNaPlanszy().getJedzenie()+towar.getJedzenie());
-						Plansza.getArystokrataNaPlanszy().setMaterialy(Plansza.getArystokrataNaPlanszy().getMaterialy()+towar.getMaterialy());
-						Plansza.getArystokrataNaPlanszy().setNarzedzia(Plansza.getArystokrataNaPlanszy().getNarzedzia()+towar.getNarzedzia());
-						Plansza.getArystokrataNaPlanszy().setTowary(Plansza.getArystokrataNaPlanszy().getTowary()+towar.getTowary());
-						Plansza.getArystokrataNaPlanszy().setUbrania(Plansza.getArystokrataNaPlanszy().getUbrania()+towar.getUbrania());
-						Plansza.getArystokrataNaPlanszy().setZloto(Plansza.getArystokrataNaPlanszy().getZloto()+towar.getZloto());
+						Plansza.getArystokrataNaPlanszy().ZbieranieTowarow(towar);
 						System.out.println("ZBIERAM Arystokrata");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						i--;
@@ -96,12 +90,28 @@ public class Tura {
 	}
 	
 	public void AwansSpoleczny() {
-		
+		System.out.println("POPULACJAMAX: " + ZapisOdczyt.getPOPULACJAMAX());
+		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+			System.out.println("Awans Niewolnikow");
+			Plansza.setNiewolnikNaPlanszy(new Mieszczanie(Plansza.getNiewolnikNaPLanszy()));
+		}
+			
+		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+			System.out.println("Awans Rzemieslnikow");
+			Plansza.setRzemieslnikNaPlanszy(new Handlarze(Plansza.getRzemieslnikNaPlanszy()));
+		}
+			
+		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
+			System.out.println("Awans Arystokracji");
+			Plansza.setArystokrataNaPlanszy(new Szlachta(Plansza.getArystokrataNaPlanszy()));
+		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		Plansza pla = new Plansza(10, 11);
 		Tura tura = new Tura();
+		ZapisOdczyt odc = new ZapisOdczyt();
+		odc.Odczyt();
 		pla.setTowarNaPlanszy(new Towar(3,7));
 		pla.setTowarNaPlanszy(new Towar(3,7));
 		pla.setTowarNaPlanszy(new Towar(3,8));
@@ -120,6 +130,7 @@ public class Tura {
 		
 		
 		tura.ZbierzTowaryKlas();
+		tura.HandelKlas();
 		
 		System.out.println("Po zebraniu: Niewolnik");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
@@ -142,6 +153,9 @@ public class Tura {
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
+		
+		tura.AwansSpoleczny();
+		
 	}
 	
 }

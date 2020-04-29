@@ -1,7 +1,5 @@
 package KlasaSpoleczna;
 
-import Towar.*;
-
 public class Rzemieslnicy extends KlasaSpoleczna {
 	
 	
@@ -19,7 +17,7 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 
 				System.out.println("Handlujemy");
 				
-				if(klasa instanceof Niewolnicy) {
+				if(klasa instanceof Niewolnicy || klasa instanceof Mieszczanie) {
 					while(klasa.getNarzedzia() != 0 && getJedzenie() != 0) {
 						klasa.setJedzenie(klasa.getJedzenie()+1);
 						setJedzenie(getJedzenie()-1);
@@ -33,7 +31,7 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 						setMaterialy(getMaterialy()+1);
 					}
 				}
-				if(klasa instanceof Arystokracja) {
+				if(klasa instanceof Arystokracja || klasa instanceof Szlachta) {
 					while(klasa.getNarzedzia() != 0 && getZloto() != 0 ) {
 						klasa.setNarzedzia(klasa.getNarzedzia()+1);
 						setNarzedzia(getNarzedzia()-1);
@@ -49,14 +47,5 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 				}
 					
 			}
-	}
-	
-	public void ZbieranieTowarow(Towar towar) {
-		setJedzenie(towar.getJedzenie());
-		setUbrania(towar.getUbrania());
-		setNarzedzia(towar.getJedzenie());
-		setMaterialy(towar.getMaterialy());
-		setTowary(towar.getTowary());
-		setZloto(towar.getZloto());
 	}
 }

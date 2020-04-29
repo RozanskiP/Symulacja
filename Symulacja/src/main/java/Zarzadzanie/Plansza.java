@@ -57,13 +57,13 @@ public class Plansza {
 	public static KlasaSpoleczna getNiewolnikNaPLanszy() { return NiewolnikNaPlanszy; }
 	public static KlasaSpoleczna getRzemieslnikNaPlanszy() { return RzemieslnikNaPlanszy; }
 	public static KlasaSpoleczna getArystokrataNaPlanszy() { return ArystokrataNaPlanszy; }
-	public void setNiewolnikNaPlanszy(KlasaSpoleczna NowaKlasa) {
+	public static void setNiewolnikNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		NiewolnikNaPlanszy = NowaKlasa;
 	}
-	public void setRzemieslnikNaPlanszy(KlasaSpoleczna NowaKlasa) {
+	public static void setRzemieslnikNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		RzemieslnikNaPlanszy = NowaKlasa;
 	}
-	public void setArystokrataNaPlanszy(KlasaSpoleczna NowaKlasa) {
+	public static void setArystokrataNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		ArystokrataNaPlanszy = NowaKlasa;
 	}
 	

@@ -48,8 +48,16 @@ public abstract class KlasaSpoleczna {
 	}
 	
 	public abstract void Handel(KlasaSpoleczna klasa);
-	public abstract void ZbieranieTowarow(Towar towar);
 	public abstract String toString();
+	
+	public void ZbieranieTowarow(Towar towar) {
+		setJedzenie(getJedzenie()+towar.getJedzenie());
+		setUbrania(getUbrania()+towar.getUbrania());
+		setNarzedzia(getNarzedzia()+towar.getNarzedzia());
+		setMaterialy(getMaterialy()+towar.getMaterialy());
+		setTowary(getTowary()+towar.getTowary());
+		setZloto(getZloto()+towar.getZloto());
+	}
 	
 	public int getPopulacja() { return this.Populacja; }
 	public void setPopulacja(int Populacja) { this.Populacja = Populacja; }

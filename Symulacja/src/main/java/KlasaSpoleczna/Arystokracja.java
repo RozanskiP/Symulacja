@@ -1,7 +1,5 @@
 package KlasaSpoleczna;
 
-import Towar.*;
-
 public class Arystokracja extends KlasaSpoleczna{
 	
 	
@@ -18,7 +16,7 @@ public class Arystokracja extends KlasaSpoleczna{
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 
 				System.out.println("Handlujemy");
-				if(klasa instanceof Niewolnicy) {
+				if(klasa instanceof Niewolnicy || klasa instanceof Mieszczanie) {
 					while(klasa.getZloto() != 0 && getJedzenie() != 0) {
 						klasa.setJedzenie(klasa.getJedzenie()+1);
 						setJedzenie(getJedzenie()-1);
@@ -32,7 +30,7 @@ public class Arystokracja extends KlasaSpoleczna{
 						setTowary(getTowary()+1);
 					}
 				}
-				if(klasa instanceof Rzemieslnicy) {
+				if(klasa instanceof Rzemieslnicy || klasa instanceof Handlarze) {
 					while(klasa.getZloto() != 0 && getNarzedzia() != 0) {
 						klasa.setNarzedzia(klasa.getNarzedzia()-1);
 						setNarzedzia(getNarzedzia()+1);
@@ -47,14 +45,5 @@ public class Arystokracja extends KlasaSpoleczna{
 					}
 				}
 			}
-	}
-	
-	public void ZbieranieTowarow(Towar towar) {
-		setJedzenie(towar.getJedzenie());
-		setUbrania(towar.getUbrania());
-		setNarzedzia(towar.getJedzenie());
-		setMaterialy(towar.getMaterialy());
-		setTowary(towar.getTowary());
-		setZloto(towar.getZloto());
 	}
 }
