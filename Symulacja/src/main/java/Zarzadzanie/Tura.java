@@ -113,18 +113,39 @@ public class Tura {
 	}
 	
 	public void Zabojstwa() {
-		//for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
+		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
 			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
 				int minusNiewolnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getNiewolnikNaPLanszy());
+				int minusRzemielsnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getRzemieslnikNaPlanszy());
+				int minusArystokrata = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getArystokrataNaPlanszy());
 				
-				Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - minusNiewolnik);
-				Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - minusNiewolnik);
+				if(minusNiewolnik > 0) {
+					Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - minusNiewolnik);
+					Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - minusNiewolnik);
+					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					i--;
+					break;
+				}
 				
+				if(minusRzemielsnik > 0) {
+					Plansza.getRzemieslnikNaPlanszy().setNarzedzia(Plansza.getRzemieslnikNaPlanszy().getNarzedzia() - minusRzemielsnik);
+					Plansza.getRzemieslnikNaPlanszy().setMaterialy(Plansza.getRzemieslnikNaPlanszy().getMaterialy() - minusRzemielsnik);
+					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					i--;
+					break;
+				}
 				
+				if(minusArystokrata > 0) {
+					Plansza.getNiewolnikNaPLanszy().setTowary(Plansza.getNiewolnikNaPLanszy().getTowary() - minusArystokrata);
+					Plansza.getNiewolnikNaPLanszy().setZloto(Plansza.getNiewolnikNaPLanszy().getZloto() - minusArystokrata);
+					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					i--;
+					break;
+				}
 				
 				
 			}
-		//}
+		}
 		
 	}
 	
@@ -217,13 +238,14 @@ public class Tura {
 		System.out.println("Polozenie: ");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getXpolozenie());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getYpolozenie());
-		System.out.println();
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
+		
+		
+		Plansza.getNiewolnikNaPLanszy().setJedzenie(10);
+		Plansza.getNiewolnikNaPLanszy().setMaterialy(10);
+		Plansza.getNiewolnikNaPLanszy().setNarzedzia(10);
+		Plansza.getNiewolnikNaPLanszy().setTowary(10);
+		Plansza.getNiewolnikNaPLanszy().setUbrania(10);
+		Plansza.getNiewolnikNaPLanszy().setZloto(10);
 		
 		
 		tura.ZbierzTowaryKlas();
@@ -236,6 +258,7 @@ public class Tura {
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
+		/*
 		System.out.println("Po zebraniu: Rzemieslnik");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
@@ -250,11 +273,26 @@ public class Tura {
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
+		*/
+		
+		//System.out.println(GenerujNiebezpieczenstwo.getXniebezpieczenstwo());
+		//System.out.println(GenerujNiebezpieczenstwo.getYniebezpieczenstwo());
+		//System.out.println(GenerujNiebezpieczenstwo.getZabojca().ZmniejszIloscPopulacja(Plansza.getNiewolnikNaPLanszy()));
+		//2 generuje
 		
 		tura.AwansSpoleczny();
 		tura.Wygrana();
 		tura.AktualizacjaPopulacjiKlas();
 		
+		tura.Zabojstwa();
+		
+		System.out.println("Po zebraniu: Niewolnik po zabujstwach");
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 	}
 	
 }

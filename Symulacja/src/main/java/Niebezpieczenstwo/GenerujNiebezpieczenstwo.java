@@ -5,12 +5,12 @@ import RandomoweLiczby.GeneratorRandom;
 public class GenerujNiebezpieczenstwo {
 	private static int Xniebezpieczenstwo;
 	private static int Yniebezpieczenstwo;
-	private static Niebezpieczenstwo Zabojca;
+	private Niebezpieczenstwo Zabojca;
 	
 	public GenerujNiebezpieczenstwo(int X, int Y) {
 		Xniebezpieczenstwo = X;
 		Yniebezpieczenstwo = Y;
-		int a = 1; // GeneratorRandom.RandomOd1(3);
+		int a = GeneratorRandom.RandomOd1(3);
 		switch(a) {
 		case 1: Zabojca = new Bandyci();
 			break;
@@ -22,7 +22,7 @@ public class GenerujNiebezpieczenstwo {
 			break;
 		}
 	}
-	public static Niebezpieczenstwo getZabojca() { return Zabojca; }
+	public Niebezpieczenstwo getZabojca() { return Zabojca; }
 	
 	public void setXniebezpieczenstwo(int xniebezpieczenstwo) { Xniebezpieczenstwo = xniebezpieczenstwo; }
 	public static int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
