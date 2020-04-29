@@ -15,7 +15,7 @@ public class Plansza {
 	private static int LiczbaTowarow= -1;
 	private static ArrayList<Towar> TowarNaPlanszy;
 	private static int LiczbaNiebezpieczenstw = -1;
-	private ArrayList<GenerujNiebezpieczenstwo> NiebezpieczenstwoNaPlanszy;
+	private static ArrayList<GenerujNiebezpieczenstwo> NiebezpieczenstwoNaPlanszy;
 	private Budynek WarsztatNaPlanszy;
 	private Budynek MennicaNaPlanszy;
 	private static KlasaSpoleczna NiewolnikNaPlanszy;
@@ -41,11 +41,11 @@ public class Plansza {
 	public static int getYplanszy() { return Yplanszy; }
 	
 	public static ArrayList<Towar> getTowarNaPlanszy() { return TowarNaPlanszy; }
-	public void setTowarNaPlanszy(Towar towar) {
+	public static void setTowarNaPlanszy(Towar towar) {
 		TowarNaPlanszy.add(towar);
 	}
-	public ArrayList<GenerujNiebezpieczenstwo> getNiebezpieczenstwoNaPlanszy() { return NiebezpieczenstwoNaPlanszy; }
-	public void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebezpieczenstwo) {
+	public static ArrayList<GenerujNiebezpieczenstwo> getNiebezpieczenstwoNaPlanszy() { return NiebezpieczenstwoNaPlanszy; }
+	public static void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebezpieczenstwo) {
 		NiebezpieczenstwoNaPlanszy.add(niebezpieczenstwo);
 	}
 	public static int getLiczbaTowarow() { return LiczbaTowarow; }

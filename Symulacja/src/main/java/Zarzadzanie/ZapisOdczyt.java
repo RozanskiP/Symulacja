@@ -20,11 +20,11 @@ public class ZapisOdczyt {
 	private int PopulacjaStartowaArystokracja;
 	private static int POPULACJAMAX;
 	private static KlasaSpoleczna WygranaKlasa;
-	private KlasaSpoleczna Miejsce2;
-	private KlasaSpoleczna Miejsce3;
-	private int WygranaKlasaPopulacja;
-	private int Miejsce2Populacja;
-	private int Miejsce3Populacja;
+	private static KlasaSpoleczna Miejsce2;
+	private static KlasaSpoleczna Miejsce3;
+	private static int WygranaKlasaPopulacja;
+	private static int Miejsce2Populacja;
+	private static int Miejsce3Populacja;
 	
 	//Odczytywanie wartoœci pocza¹tkowych z pliku
 	public void Odczyt() throws IOException{
@@ -86,6 +86,8 @@ public class ZapisOdczyt {
 		zapis.println("Niewolnicy   : " + Plansza.getNiewolnikNaPLanszy().getLicznikTowarow() + " : " + Plansza.getNiewolnikNaPLanszy().getLicznikNiebezpieczenstw());
 		zapis.println("Rzemieslnicy : " + Plansza.getRzemieslnikNaPlanszy().getLicznikTowarow() + " : " + Plansza.getRzemieslnikNaPlanszy().getLicznikNiebezpieczenstw());
 		zapis.println("Arystokracja : " + Plansza.getArystokrataNaPlanszy().getLicznikTowarow() + " : " + Plansza.getArystokrataNaPlanszy().getLicznikNiebezpieczenstw());
+		zapis.println();
+		zapis.println("Liczba Tura wynosi³a: " + Tura.getLicznikTur());
 		
 		zapis.close();
 	}
@@ -120,31 +122,31 @@ public class ZapisOdczyt {
 	public KlasaSpoleczna getMiejsce2() {
 		return Miejsce2;
 	}
-	public void setMiejsce2(KlasaSpoleczna miejsce2) {
+	public static void setMiejsce2(KlasaSpoleczna miejsce2) {
 		Miejsce2 = miejsce2;
 	}
 	public KlasaSpoleczna getMiejsce3() {
 		return Miejsce3;
 	}
-	public void setMiejsce3(KlasaSpoleczna miejsce3) {
+	public static void setMiejsce3(KlasaSpoleczna miejsce3) {
 		Miejsce3 = miejsce3;
 	}
 	public int getWygranaKlasaPopulacja() {
 		return WygranaKlasaPopulacja;
 	}
-	public void setWygranaKlasaPopulacja(int wygranaKlasaPopulacja) {
+	public static void setWygranaKlasaPopulacja(int wygranaKlasaPopulacja) {
 		WygranaKlasaPopulacja = wygranaKlasaPopulacja;
 	}
 	public int getMiejsce2Populacja() {
 		return Miejsce2Populacja;
 	}
-	public void setMiejsce2Populacja(int miejsce2Populacja) {
+	public static void setMiejsce2Populacja(int miejsce2Populacja) {
 		Miejsce2Populacja = miejsce2Populacja;
 	}
 	public int getMiejsce3Populacja() {
 		return Miejsce3Populacja;
 	}
-	public void setMiejsce3Populacja(int miejsce3Populacja) {
+	public static void setMiejsce3Populacja(int miejsce3Populacja) {
 		Miejsce3Populacja = miejsce3Populacja;
 	}
 }

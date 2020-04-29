@@ -1,12 +1,13 @@
 package Zarzadzanie;
 
 import java.io.IOException;
-
 import KlasaSpoleczna.*;
+import RandomoweLiczby.GeneratorRandom;
 import Towar.Towar;
+import Niebezpieczenstwo.*;
 
 public class Tura {
-	private int LicznikTur = 0;
+	private static int LicznikTur = 0;
 	//private Plansza plansza;
 	
 	public Tura() {
@@ -14,11 +15,12 @@ public class Tura {
 	}
 	
 	
-	public int getLicznikTur() { return LicznikTur; }
+	public static int getLicznikTur() { return LicznikTur; }
 	public void setLicznikTur(int licznikTur) { LicznikTur = licznikTur; }
 	//public Plansza getPlansza() { return plansza; }
 
 	public void WartosciPoczatkowe() {
+		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()),GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		
 	}
 	
@@ -79,34 +81,102 @@ public class Tura {
 			}
 	}
 }
-	
+	//Aktualizacja planszy w nowe towary i niebezpieczenstwa
 	public void AktualizacjaPlanszy() {
+		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
+		
+		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
+	}
+	
+	//Aktualizacja populacji po handlu i zbieraniu towarow
+	public void AktualizacjaPopulacjiKlas() {
+		if(Plansza.getNiewolnikNaPLanszy().getJedzenie() >= Plansza.getNiewolnikNaPLanszy().getUbrania()) {
+			Plansza.getNiewolnikNaPLanszy().setPopulacja(Plansza.getNiewolnikNaPLanszy().getUbrania());
+		}
+		else {
+			Plansza.getNiewolnikNaPLanszy().setPopulacja(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		}
+		
+		if(Plansza.getRzemieslnikNaPlanszy().getNarzedzia() >= Plansza.getRzemieslnikNaPlanszy().getMaterialy()) {
+			Plansza.getRzemieslnikNaPlanszy().setPopulacja(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
+		}
+		else {
+			Plansza.getRzemieslnikNaPlanszy().setPopulacja(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
+		}
+		
+		if(Plansza.getArystokrataNaPlanszy().getTowary() >= Plansza.getArystokrataNaPlanszy().getZloto()) {
+			Plansza.getArystokrataNaPlanszy().setPopulacja(Plansza.getArystokrataNaPlanszy().getZloto());
+		}
+		else {
+			Plansza.getArystokrataNaPlanszy().setPopulacja(Plansza.getArystokrataNaPlanszy().getTowary());
+		}
+	}
+	
+	public void Zabojstwa() {
+		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
+			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
+				niebez.
+			}
+		}
 		
 	}
 	
-	public void AktualizacjaPopulacjiKlas() {
+	public void BudynkiNaPlanszy() {
 		
 	}
 	
 	public boolean Wygrana() {
 		if(SprawdzanieWygranej.WygranaNiewolnikow()) {
 			ZapisOdczyt.setWygranaKlasa(Plansza.getNiewolnikNaPLanszy());
+			ZapisOdczyt.setWygranaKlasaPopulacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
 			if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= Plansza.getArystokrataNaPlanszy().getPopulacja()) {
-				ZapisOdczyt.setMiejsce2(Plansza.ge);
+				ZapisOdczyt.setMiejsce2(Plansza.getRzemieslnikNaPlanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getRzemieslnikNaPlanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getArystokrataNaPlanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getArystokrataNaPlanszy().getPopulacja());
 			}
-			
+			else {
+				ZapisOdczyt.setMiejsce2(Plansza.getArystokrataNaPlanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getArystokrataNaPlanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getRzemieslnikNaPlanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getRzemieslnikNaPlanszy().getPopulacja());
+			}
 			
 			return true;
 		}
 		if(SprawdzanieWygranej.WygranaRzemieslnikow()) {
-			
-			
+			ZapisOdczyt.setWygranaKlasa(Plansza.getRzemieslnikNaPlanszy());
+			ZapisOdczyt.setWygranaKlasaPopulacja(Plansza.getRzemieslnikNaPlanszy().getPopulacja());
+			if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= Plansza.getArystokrataNaPlanszy().getPopulacja()) {
+				ZapisOdczyt.setMiejsce2(Plansza.getNiewolnikNaPLanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getArystokrataNaPlanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getArystokrataNaPlanszy().getPopulacja());
+			}
+			else {
+				ZapisOdczyt.setMiejsce2(Plansza.getArystokrataNaPlanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getArystokrataNaPlanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getNiewolnikNaPLanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
+			}
 			
 			return true;
 		}
 		if(SprawdzanieWygranej.WygranaArystokracji()) {
-			
-			
+			ZapisOdczyt.setWygranaKlasa(Plansza.getArystokrataNaPlanszy());
+			ZapisOdczyt.setWygranaKlasaPopulacja(Plansza.getArystokrataNaPlanszy().getPopulacja());
+			if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= Plansza.getRzemieslnikNaPlanszy().getPopulacja()) {
+				ZapisOdczyt.setMiejsce2(Plansza.getNiewolnikNaPLanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getRzemieslnikNaPlanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getRzemieslnikNaPlanszy().getPopulacja());
+			}
+			else {
+				ZapisOdczyt.setMiejsce2(Plansza.getRzemieslnikNaPlanszy());
+				ZapisOdczyt.setMiejsce2Populacja(Plansza.getRzemieslnikNaPlanszy().getPopulacja());
+				ZapisOdczyt.setMiejsce3(Plansza.getNiewolnikNaPLanszy());
+				ZapisOdczyt.setMiejsce3Populacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
+			}
 			
 			return true;
 		}
@@ -136,11 +206,7 @@ public class Tura {
 		Tura tura = new Tura();
 		ZapisOdczyt odc = new ZapisOdczyt();
 		odc.Odczyt();
-		pla.setTowarNaPlanszy(new Towar(3,7));
-		pla.setTowarNaPlanszy(new Towar(3,7));
-		pla.setTowarNaPlanszy(new Towar(3,8));
-		pla.setTowarNaPlanszy(new Towar(3,7));
-		pla.setTowarNaPlanszy(new Towar(3,8));
+		tura.AktualizacjaPlanszy();
 		System.out.println("Polozenie: ");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getXpolozenie());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getYpolozenie());
@@ -179,6 +245,8 @@ public class Tura {
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
 		
 		tura.AwansSpoleczny();
+		tura.Wygrana();
+		tura.AktualizacjaPopulacjiKlas();
 		
 	}
 	
