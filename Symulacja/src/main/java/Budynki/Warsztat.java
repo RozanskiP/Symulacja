@@ -14,7 +14,7 @@ public class Warsztat extends Budynek{
 	
 	//Metoda ktora wymnaza towar ktory znajduje sie w zasiegu Warsztatu
 	//<zrobic testy>
-	public void WymanazajTowary(Towar towar) {
+	public static void WymanazajTowary(Towar towar) {
 		if(towar.getXtowar() >= getXBudynek()-2 && towar.getXtowar() <= getXBudynek()+2)
 			if(towar.getYtowar() >= getYBudynek()-2 && towar.getYtowar() <= getYBudynek()+2) {
 				towar.setJedzenie(towar.getJedzenie()*DodatkoweTowaryWymnoz);

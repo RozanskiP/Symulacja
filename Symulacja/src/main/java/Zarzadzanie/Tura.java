@@ -5,6 +5,7 @@ import KlasaSpoleczna.*;
 import RandomoweLiczby.GeneratorRandom;
 import Towar.Towar;
 import Niebezpieczenstwo.*;
+import Budynki.*;
 
 public class Tura {
 	private static int LicznikTur = 0;
@@ -150,7 +151,10 @@ public class Tura {
 	}
 	
 	public void BudynkiNaPlanszy() {
-		
+		for(Towar towar : Plansza.getTowarNaPlanszy()) {
+			Warsztat.WymanazajTowary(towar);
+			Mennica.PlusTowary(towar);
+		}
 	}
 	
 	public boolean Wygrana() {
