@@ -6,7 +6,7 @@ import RandomoweLiczby.GeneratorRandom;
 public class Bandyci implements Niebezpieczenstwo {
 	
 	public Bandyci(){
-		System.out.println("Utworzona Bandyte");
+		//System.out.println("Utworzona Bandyte");
 	}
 	
 	@Override

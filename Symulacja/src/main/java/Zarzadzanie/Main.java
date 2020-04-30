@@ -2,8 +2,6 @@ package Zarzadzanie;
 
 import java.io.IOException;
 
-import RandomoweLiczby.GeneratorRandom;
-
 public class Main {
 	
 	public static void main() throws IOException {
@@ -23,11 +21,11 @@ public class Main {
 			tura.Wygrana();
 			tura.AktualizacjaPlanszy();
 			tura.AktualizacjaPopulacjiKlas();
-			tura.setLicznikTur(tura.setLicznikTur(tura.getLicznikTur()+1));
+			tura.setLicznikTur(Tura.getLicznikTur()+1);
 		}while(!tura.Wygrana());
 		
 		zapisodczyt.Zapis();
-		System.out.println("Licznik tur: " + tura.getLicznikTur());
+		System.out.println("Licznik tur: " + Tura.getLicznikTur());
 	}
 	
 	
@@ -35,5 +33,6 @@ public class Main {
 		
 		main();
 	}
+	
 	
 }

@@ -8,14 +8,14 @@ public class GeneratorRandom {
 	private static int ZiarnoGeneratoradoTestow= 40;
 	
 	public static int RandomOd1(int Zakres) {
-		Random rand = new Random(ZiarnoGeneratoradoTestow);
+		Random rand = new Random();
 		int a = rand.nextInt(Zakres)+1;
 		
 		return a;
 	}
 	//Generator losowy liczb od 0 do Zakres
 	public static int RandomOd0(int Zakres) {
-		Random rand = new Random(ZiarnoGeneratoradoTestow);
+		Random rand = new Random();
 		int a = rand.nextInt(Zakres);
 		
 		return a;

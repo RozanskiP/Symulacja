@@ -8,7 +8,7 @@ import Niebezpieczenstwo.*;
 import Budynki.*;
 
 public class Tura {
-	private static int LicznikTur = 0;
+	private static int LicznikTur;
 	
 	
 	public Tura() {
@@ -18,7 +18,6 @@ public class Tura {
 	
 	public static int getLicznikTur() { return LicznikTur; }
 	public void setLicznikTur(int licznikTur) { LicznikTur = licznikTur; }
-	//public Plansza getPlansza() { return plansza; }
 
 	public void WartosciPoczatkowe() {
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()),GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
@@ -53,9 +52,9 @@ public class Tura {
 				if(Plansza.getNiewolnikNaPLanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getNiewolnikNaPLanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getNiewolnikNaPLanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getNiewolnikNaPLanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getNiewolnikNaPLanszy().ZbieranieTowarow(towar);
-						//System.out.println("ZBIERAM Niewolnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getNiewolnikNaPLanszy().setLicznikTowarow(Plansza.getNiewolnikNaPLanszy().getLicznikTowarow()+1);
+						System.out.println("ZBIERAM Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 						i--;
 						break;
 					}
@@ -63,9 +62,9 @@ public class Tura {
 				if(Plansza.getRzemieslnikNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getRzemieslnikNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getRzemieslnikNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getRzemieslnikNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getRzemieslnikNaPlanszy().ZbieranieTowarow(towar);
-						//System.out.println("ZBIERAM Rzemieslnik");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getRzemieslnikNaPlanszy().setLicznikTowarow(Plansza.getRzemieslnikNaPlanszy().getLicznikTowarow()+1);
+						System.out.println("ZBIERAM Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 						i--;
 						break;
 					}
@@ -73,9 +72,9 @@ public class Tura {
 				if(Plansza.getArystokrataNaPlanszy().getXpolozenie()-1 <= towar.getXtowar() && Plansza.getArystokrataNaPlanszy().getXpolozenie()+1 >= towar.getXtowar()) 
 					if(Plansza.getArystokrataNaPlanszy().getYpolozenie()-1 <= towar.getYtowar() && Plansza.getArystokrataNaPlanszy().getYpolozenie()+1 >= towar.getYtowar()) {
 						Plansza.getArystokrataNaPlanszy().ZbieranieTowarow(towar);
-						//System.out.println("ZBIERAM Arystokrata");
 						Plansza.getTowarNaPlanszy().remove(towar);
 						Plansza.getArystokrataNaPlanszy().setLicznikTowarow(Plansza.getArystokrataNaPlanszy().getLicznikTowarow()+1);
+						System.out.println("ZBIERAM Arystokrata: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
 						i--;
 						break;
 					}
@@ -84,6 +83,7 @@ public class Tura {
 }
 	//Aktualizacja planszy w nowe towary i niebezpieczenstwa
 	public void AktualizacjaPlanszy() {
+		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		
 		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
