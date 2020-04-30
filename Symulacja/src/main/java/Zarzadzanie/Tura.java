@@ -19,64 +19,62 @@ public class Tura {
 	public void setLicznikTur(int licznikTur) { LicznikTur = licznikTur; }
 	
 	public void RuchyKlas() {
-		System.out.println("RuchKlas");
 		
-		/*
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		
+		System.out.println("			RuchKlas");
 		Plansza.getNiewolnikNaPLanszy().Ruch();
 		Plansza.getRzemieslnikNaPlanszy().Ruch();
 		Plansza.getArystokrataNaPlanszy().Ruch();
 	}
 	
 	public void HandelKlas() {
-		System.out.println("HandelKlas");
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		System.out.println("			HandelKlas");
 		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
 		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getArystokrataNaPlanszy());
 		
@@ -92,32 +90,32 @@ public class Tura {
 	}
 	
 	public void ZbierzTowaryKlas() {
-		System.out.println("ZbierzTowaryKlas");
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		
+		System.out.println("			ZbierzTowaryKlas");
 		for(int i=0;i<Plansza.getTowarNaPlanszy().size();i++) {
 			for(Towar towar : Plansza.getTowarNaPlanszy()) {
 				
@@ -159,30 +157,31 @@ public class Tura {
 	
 	//Aktualizacja planszy w nowe towary i niebezpieczenstwa
 	public void AktualizacjaPlanszy() {
-		System.out.println("AktualizacjaPlanszy");
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
+		
+		
+		System.out.println("			AktualizacjaPlanszy");
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		System.out.println();
@@ -196,32 +195,31 @@ public class Tura {
 	
 	//Aktualizacja populacji po handlu i zbieraniu towarow
 	public void AktualizacjaPopulacjiKlas() {
-		System.out.println("AktualizacjaPopulacjiKlas");
 		
-		/*
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		
+		System.out.println("			AktualizacjaPopulacjiKlas");
 		if(Plansza.getNiewolnikNaPLanszy().getJedzenie() >= Plansza.getNiewolnikNaPLanszy().getUbrania()) {
 			Plansza.getNiewolnikNaPLanszy().setPopulacja(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		}
@@ -248,58 +246,61 @@ public class Tura {
 	}
 	
 	public void Zabojstwa() {
-		System.out.println("Zabojstwa");
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		
+		System.out.println("			Zabojstwa");
 		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
 			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
 				int minusNiewolnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getNiewolnikNaPLanszy());
 				int minusRzemielsnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getRzemieslnikNaPlanszy());
 				int minusArystokrata = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getArystokrataNaPlanszy());
 				
-				if(minusNiewolnik > 0) {
+				if(minusNiewolnik > 0 && Plansza.getNiewolnikNaPLanszy().getPopulacja() > minusNiewolnik) {
 					Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - minusNiewolnik);
 					Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - minusNiewolnik);
 					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					System.out.println("1----------------------------------------------------------------ZABIJAM");
 					i--;
 					break;
 				}
 				
-				if(minusRzemielsnik > 0) {
+				if(minusRzemielsnik > 0 && Plansza.getRzemieslnikNaPlanszy().getPopulacja() > minusRzemielsnik) {
 					Plansza.getRzemieslnikNaPlanszy().setNarzedzia(Plansza.getRzemieslnikNaPlanszy().getNarzedzia() - minusRzemielsnik);
 					Plansza.getRzemieslnikNaPlanszy().setMaterialy(Plansza.getRzemieslnikNaPlanszy().getMaterialy() - minusRzemielsnik);
 					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					System.out.println("2----------------------------------------------------------------ZABIJAM");
 					i--;
 					break;
 				}
 				
-				if(minusArystokrata > 0) {
+				if(minusArystokrata > 0 && Plansza.getArystokrataNaPlanszy().getPopulacja() > minusArystokrata) {
 					Plansza.getNiewolnikNaPLanszy().setTowary(Plansza.getNiewolnikNaPLanszy().getTowary() - minusArystokrata);
 					Plansza.getNiewolnikNaPLanszy().setZloto(Plansza.getNiewolnikNaPLanszy().getZloto() - minusArystokrata);
 					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+					System.out.println("3----------------------------------------------------------------ZABIJAM");
 					i--;
 					break;
 				}
@@ -315,31 +316,32 @@ public class Tura {
 	//Niesprawdzona metoda
 	public void BudynkiNaPlanszy() {
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
-		System.out.println("BudynkiNaPlanszy");
+		
+		
+		System.out.println("		BudynkiNaPlanszy");
 		for(Towar towar : Plansza.getTowarNaPlanszy()) {
 			Warsztat.WymanazajTowary(towar);
 			Mennica.PlusTowary(towar);
@@ -350,32 +352,32 @@ public class Tura {
 	}
 	
 	public boolean Wygrana() {
-		System.out.println("Wygrana");
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
+		
+		System.out.println("			Wygrana");
 		if(SprawdzanieWygranej.WygranaNiewolnikow()) {
 			ZapisOdczyt.setWygranaKlasa(Plansza.getNiewolnikNaPLanszy());
 			ZapisOdczyt.setWygranaKlasaPopulacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
@@ -438,43 +440,43 @@ public class Tura {
 	}
 	
 	public void AwansSpoleczny() {
-		System.out.println("AwansSpoleczny");
 		
-		/*
+		
 		System.out.println("Niewolnik przedmioty");
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getJedzenie());
+		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getMaterialy());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getNarzedzia());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getTowary());
-		System.out.println(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		System.out.println(Plansza.getNiewolnikNaPLanszy().getZloto());
 		System.out.println("Rzemieslnik przedmioty");
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getTowary());
-		System.out.println(Plansza.getRzemieslnikNaPlanszy().getUbrania());
 		System.out.println(Plansza.getRzemieslnikNaPlanszy().getZloto());
 		System.out.println("Arystokrata przedmioty");
 		System.out.println(Plansza.getArystokrataNaPlanszy().getJedzenie());
+		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getMaterialy());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getNarzedzia());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getTowary());
-		System.out.println(Plansza.getArystokrataNaPlanszy().getUbrania());
 		System.out.println(Plansza.getArystokrataNaPlanszy().getZloto());
-		*/
 		
-		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
+		
+		System.out.println("			AwansSpoleczny");
+		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67 && Plansza.getNiewolnikNaPLanszy() instanceof Niewolnicy) {
 			System.out.println("Awans Niewolnikow");
 			Plansza.setNiewolnikNaPlanszy(new Mieszczanie(Plansza.getNiewolnikNaPLanszy()));
 		}
 			
-		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
+		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67 && Plansza.getRzemieslnikNaPlanszy() instanceof Rzemieslnicy) {
 			System.out.println("Awans Rzemieslnikow");
 			Plansza.setRzemieslnikNaPlanszy(new Handlarze(Plansza.getRzemieslnikNaPlanszy()));
 		}
 			
-		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67) {
+		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67 && Plansza.getArystokrataNaPlanszy() instanceof Arystokracja) {
 			System.out.println("Awans Arystokracji");
 			Plansza.setArystokrataNaPlanszy(new Szlachta(Plansza.getArystokrataNaPlanszy()));
 		}

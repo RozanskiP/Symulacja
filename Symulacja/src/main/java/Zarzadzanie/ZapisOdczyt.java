@@ -62,7 +62,7 @@ public class ZapisOdczyt {
 		PopulacjaStartowaArystokracja = liczby.get(7);
 		POPULACJAMAX = liczby.get(8);
 		
-		System.out.println(liczby);
+		//System.out.println(liczby);
 	}
 
 	//Zapisywanie danych po skoñczonej symulacji

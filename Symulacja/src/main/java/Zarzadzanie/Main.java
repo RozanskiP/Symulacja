@@ -1,7 +1,9 @@
 package Zarzadzanie;
 
 import java.io.IOException;
-import Towar.*;
+
+import Niebezpieczenstwo.GenerujNiebezpieczenstwo;
+import Towar.Towar;
 
 public class Main {
 	
@@ -20,9 +22,13 @@ public class Main {
 				System.out.println("Towar:");
 				System.out.println("X: " + towar.getXtowar());
 				System.out.println("Y: " + towar.getYtowar());
-				System.out.println("Jedzenie: " + towar.getJedzenie());
-				System.out.println("Narzedzia: " + towar.getNarzedzia());
-				System.out.println("Zloto: " + towar.getZloto());
+			}
+			*/
+			/*
+			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
+				System.out.println();
+				System.out.println("X : " + niebez.getXniebezpieczenstwo());
+				System.out.println("Y : " + niebez.getYniebezpieczenstwo());
 			}
 			*/
 			tura.RuchyKlas();
@@ -35,12 +41,12 @@ public class Main {
 			tura.setLicznikTur(Tura.getLicznikTur()+1);
 			System.out.println("                                     Tura: " + Tura.getLicznikTur());
 		}while(!tura.Wygrana());
-		
-		System.out.println(Plansza.getWarsztatNaPlanszy().getXBudynek());
-		System.out.println(Plansza.getWarsztatNaPlanszy().getYBudynek());
-		
-		System.out.println(Plansza.getMennicaNaPlanszy().getXBudynek());
-		System.out.println(Plansza.getMennicaNaPlanszy().getYBudynek());
+		/*
+		System.out.println("X:" + Plansza.getWarsztatNaPlanszy().getXBudynek());
+		System.out.println("Y:" + Plansza.getWarsztatNaPlanszy().getYBudynek());
+		System.out.println("X:" + Plansza.getMennicaNaPlanszy().getXBudynek());
+		System.out.println("Y:" + Plansza.getMennicaNaPlanszy().getYBudynek());
+		*/
 		
 		zapisodczyt.Zapis();
 		System.out.println("Licznik tur: " + Tura.getLicznikTur());

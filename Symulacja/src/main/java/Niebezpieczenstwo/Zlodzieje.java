@@ -14,7 +14,7 @@ public class Zlodzieje implements Niebezpieczenstwo {
 		if(klspol instanceof Arystokracja) {
 			if(GenerujNiebezpieczenstwo.getXniebezpieczenstwo()-1 <= klspol.getXpolozenie() && GenerujNiebezpieczenstwo.getXniebezpieczenstwo()+1 >= klspol.getXpolozenie()) {
 				if(GenerujNiebezpieczenstwo.getYniebezpieczenstwo()-1 <= klspol.getYpolozenie() && GenerujNiebezpieczenstwo.getYniebezpieczenstwo()+1 >= klspol.getYpolozenie()) {
-					int a = GeneratorRandom.RandomOd1(2);
+					int a = 0; // GeneratorRandom.RandomOd1(2);
 					return a;
 				}
 			}
