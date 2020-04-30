@@ -12,4 +12,4 @@ Populacja startowa Niewolników : 20
 Populacja startowa Rzemieslników : 15
 Populacja startowa Arystokracji : 18
 
-Populacja po osi¹gniêciu, której któraœ klasa zwyciê¿y : 1100
+Populacja po osi¹gniêciu, której któraœ klasa zwyciê¿y : 2000

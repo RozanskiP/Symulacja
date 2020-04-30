@@ -1,15 +1,16 @@
 package Niebezpieczenstwo;
 
 import RandomoweLiczby.GeneratorRandom;
+import Zarzadzanie.Plansza;
 
 public class GenerujNiebezpieczenstwo {
-	private static int Xniebezpieczenstwo;
-	private static int Yniebezpieczenstwo;
+	private int Xniebezpieczenstwo;
+	private int Yniebezpieczenstwo;
 	private Niebezpieczenstwo Zabojca;
 	
 	public GenerujNiebezpieczenstwo(int X, int Y) {
-		Xniebezpieczenstwo = X;
-		Yniebezpieczenstwo = Y;
+		Xniebezpieczenstwo = GeneratorRandom.RandomOd1(Plansza.getXplanszy());
+		Yniebezpieczenstwo = GeneratorRandom.RandomOd1(Plansza.getYplanszy());
 		int a = GeneratorRandom.RandomOd1(3);
 		switch(a) {
 		case 1: Zabojca = new Bandyci();
@@ -25,9 +26,9 @@ public class GenerujNiebezpieczenstwo {
 	public Niebezpieczenstwo getZabojca() { return Zabojca; }
 	
 	public void setXniebezpieczenstwo(int xniebezpieczenstwo) { Xniebezpieczenstwo = xniebezpieczenstwo; }
-	public static int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
+	public int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
 	public void setYniebezpieczenstwo(int yniebezpieczenstwo) { Yniebezpieczenstwo = yniebezpieczenstwo; }
-	public static int getYniebezpieczenstwo() { return Yniebezpieczenstwo; }
+	public int getYniebezpieczenstwo() { return Yniebezpieczenstwo; }
 	
 	/*
 	public static void main(String[] args) {

@@ -73,22 +73,10 @@ public class Plansza {
 		ZapisOdczyt odcz = new ZapisOdczyt();
 		odcz.Odczyt();
 		Plansza obj = new Plansza(odcz.getWielkoscPlanszyX(),odcz.getWielkoscPlanszyY());
-		System.out.println(obj.getNiewolnikNaPLanszy().getXpolozenie());
-		System.out.println(obj.getNiewolnikNaPLanszy().getYpolozenie());
-		System.out.println(obj.getRzemieslnikNaPlanszy().getXpolozenie());
-		System.out.println(obj.getRzemieslnikNaPlanszy().getYpolozenie());
-		System.out.println();
-		System.out.println(obj.getWarsztatNaPlanszy().getXBudynek());
-		System.out.println(obj.getWarsztatNaPlanszy().getYBudynek());
-		System.out.println(obj.getMennicaNaPlanszy().getXBudynek());
-		System.out.println(obj.getMennicaNaPlanszy().getYBudynek());
 		
 		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
+		
 		for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
 			System.out.println();
 			System.out.println(niebez.getXniebezpieczenstwo());

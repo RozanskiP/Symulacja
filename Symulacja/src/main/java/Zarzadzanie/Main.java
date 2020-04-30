@@ -36,10 +36,11 @@ public class Main {
 			tura.HandelKlas();
 			tura.Zabojstwa();
 			tura.BudynkiNaPlanszy();
-			tura.AwansSpoleczny();
 			tura.AktualizacjaPopulacjiKlas();
+			tura.AwansSpoleczny();
 			tura.setLicznikTur(Tura.getLicznikTur()+1);
 			System.out.println("                                     Tura: " + Tura.getLicznikTur());
+		//}while(Tura.getLicznikTur() < 100);
 		}while(!tura.Wygrana());
 		/*
 		System.out.println("X:" + Plansza.getWarsztatNaPlanszy().getXBudynek());
@@ -49,7 +50,7 @@ public class Main {
 		*/
 		
 		zapisodczyt.Zapis();
-		System.out.println("Licznik tur: " + Tura.getLicznikTur());
+		System.out.println("Licznik tur KONCOWY: " + Tura.getLicznikTur());
 	}
 	
 	

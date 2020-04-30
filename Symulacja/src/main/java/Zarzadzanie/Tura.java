@@ -88,9 +88,11 @@ public class Tura {
 		Plansza.getArystokrataNaPlanszy().Handel(Plansza.getNiewolnikNaPLanszy());
 		Plansza.getArystokrataNaPlanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
 		
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	
 	public void ZbierzTowaryKlas() {
@@ -156,9 +158,11 @@ public class Tura {
 					}
 			}
 		}
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	
 	//Aktualizacja planszy w nowe towary i niebezpieczenstwa
@@ -196,9 +200,11 @@ public class Tura {
 		
 		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	
 	//Aktualizacja populacji po handlu i zbieraniu towarow
@@ -248,9 +254,11 @@ public class Tura {
 		else {
 			Plansza.getArystokrataNaPlanszy().setPopulacja(Plansza.getArystokrataNaPlanszy().getTowary());
 		}
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	
 	public void Zabojstwa() {
@@ -282,43 +290,63 @@ public class Tura {
 		System.out.println("			Zabojstwa");
 		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
 			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
-				int minusNiewolnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getNiewolnikNaPLanszy());
-				int minusRzemielsnik = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getRzemieslnikNaPlanszy());
-				int minusArystokrata = niebez.getZabojca().ZmniejszIloscPopulacja(Plansza.getArystokrataNaPlanszy());
-				
-				if(minusNiewolnik > 0 && Plansza.getNiewolnikNaPLanszy().getPopulacja() > minusNiewolnik) {
-					Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - minusNiewolnik);
-					Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - minusNiewolnik);
-					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
-					System.out.println("1----------------------------------------------------------------ZABIJAM");
-					i--;
-					break;
+
+				if(niebez.getZabojca() instanceof  DzikieZwierzeta) {
+					if(niebez.getXniebezpieczenstwo()-1 <= Plansza.getNiewolnikNaPLanszy().getXpolozenie() && niebez.getXniebezpieczenstwo()+1 >= Plansza.getNiewolnikNaPLanszy().getXpolozenie()) {
+						if(niebez.getYniebezpieczenstwo()-1 <= Plansza.getNiewolnikNaPLanszy().getYpolozenie() && niebez.getYniebezpieczenstwo()+1 >= Plansza.getNiewolnikNaPLanszy().getYpolozenie()) {
+							if(Plansza.getNiewolnikNaPLanszy().getUbrania() >= niebez.getZabojca().ZmniejszIloscPopulacja() && Plansza.getNiewolnikNaPLanszy().getJedzenie() >= niebez.getZabojca().ZmniejszIloscPopulacja()) {
+								Plansza.getNiewolnikNaPLanszy().setUbrania(Plansza.getNiewolnikNaPLanszy().getUbrania() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								Plansza.getNiewolnikNaPLanszy().setJedzenie(Plansza.getNiewolnikNaPLanszy().getJedzenie() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								System.out.println("ZABIJAM NIEWOLNIKA");
+								Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+								i--;
+								break;
+							}
+						}
+					}
+					
 				}
 				
-				if(minusRzemielsnik > 0 && Plansza.getRzemieslnikNaPlanszy().getPopulacja() > minusRzemielsnik) {
-					Plansza.getRzemieslnikNaPlanszy().setNarzedzia(Plansza.getRzemieslnikNaPlanszy().getNarzedzia() - minusRzemielsnik);
-					Plansza.getRzemieslnikNaPlanszy().setMaterialy(Plansza.getRzemieslnikNaPlanszy().getMaterialy() - minusRzemielsnik);
-					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
-					System.out.println("2----------------------------------------------------------------ZABIJAM");
-					i--;
-					break;
+				
+				if(niebez.getZabojca() instanceof Bandyci) {
+					if(niebez.getXniebezpieczenstwo()-1 <= Plansza.getRzemieslnikNaPlanszy().getXpolozenie() && niebez.getXniebezpieczenstwo()+1 >= Plansza.getRzemieslnikNaPlanszy().getXpolozenie()) {
+						if(niebez.getYniebezpieczenstwo()-1 <= Plansza.getRzemieslnikNaPlanszy().getYpolozenie() && niebez.getYniebezpieczenstwo()+1 >= Plansza.getRzemieslnikNaPlanszy().getYpolozenie()) {
+							if(Plansza.getRzemieslnikNaPlanszy().getMaterialy() >= niebez.getZabojca().ZmniejszIloscPopulacja() && Plansza.getRzemieslnikNaPlanszy().getNarzedzia() >= niebez.getZabojca().ZmniejszIloscPopulacja()) {
+								Plansza.getRzemieslnikNaPlanszy().setMaterialy(Plansza.getRzemieslnikNaPlanszy().getMaterialy() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								Plansza.getRzemieslnikNaPlanszy().setNarzedzia(Plansza.getRzemieslnikNaPlanszy().getNarzedzia() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								System.out.println("ZABIJAM Rzemiwslnika");
+								Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+								i--;
+								break;
+							}
+						}
+					}
+					
 				}
 				
-				if(minusArystokrata > 0 && Plansza.getArystokrataNaPlanszy().getPopulacja() > minusArystokrata) {
-					Plansza.getNiewolnikNaPLanszy().setTowary(Plansza.getNiewolnikNaPLanszy().getTowary() - minusArystokrata);
-					Plansza.getNiewolnikNaPLanszy().setZloto(Plansza.getNiewolnikNaPLanszy().getZloto() - minusArystokrata);
-					Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
-					System.out.println("3----------------------------------------------------------------ZABIJAM");
-					i--;
-					break;
+				if(niebez.getZabojca() instanceof Zlodzieje) {
+					if(niebez.getXniebezpieczenstwo()-1 <= Plansza.getArystokrataNaPlanszy().getXpolozenie() && niebez.getXniebezpieczenstwo()+1 >= Plansza.getArystokrataNaPlanszy().getXpolozenie()) {
+						if(niebez.getYniebezpieczenstwo()-1 <= Plansza.getArystokrataNaPlanszy().getYpolozenie() && niebez.getYniebezpieczenstwo()+1 >= Plansza.getArystokrataNaPlanszy().getYpolozenie()) {
+							if(Plansza.getArystokrataNaPlanszy().getTowary() >= niebez.getZabojca().ZmniejszIloscPopulacja() && Plansza.getArystokrataNaPlanszy().getZloto() >= niebez.getZabojca().ZmniejszIloscPopulacja()) {
+								Plansza.getArystokrataNaPlanszy().setTowary(Plansza.getArystokrataNaPlanszy().getTowary() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								Plansza.getArystokrataNaPlanszy().setZloto(Plansza.getArystokrataNaPlanszy().getZloto() - niebez.getZabojca().ZmniejszIloscPopulacja());
+								System.out.println("ZABIJAM Arystokracje");
+								Plansza.getNiebezpieczenstwoNaPlanszy().remove(niebez);
+								i--;
+								break;
+							}
+						}
+					}
+					
 				}
-				
 				
 			}
 		}
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 		
 	}
 	//Niesprawdzona metoda
@@ -356,9 +384,11 @@ public class Tura {
 			Warsztat.WymanazajTowary(towar);
 			Mennica.PlusTowary(towar);
 		}
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	
 	public boolean Wygrana() {
@@ -442,9 +472,11 @@ public class Tura {
 			
 			return true;
 		}
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 		
 		return false;
 	}
@@ -493,9 +525,11 @@ public class Tura {
 			Plansza.setArystokrataNaPlanszy(new Szlachta(Plansza.getArystokrataNaPlanszy()));
 		}
 		
+		/*
 		System.out.println("Niewolnik: " + Plansza.getNiewolnikNaPLanszy().getPopulacja());
 		System.out.println("Rzemieslnik: " + Plansza.getRzemieslnikNaPlanszy().getPopulacja());
 		System.out.println("Arystokratat: " + Plansza.getArystokrataNaPlanszy().getPopulacja());
+		*/
 	}
 	/*
 	public static void main(String[] args) throws IOException{
