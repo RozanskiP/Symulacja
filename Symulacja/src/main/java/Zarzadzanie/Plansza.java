@@ -16,8 +16,8 @@ public class Plansza {
 	private static ArrayList<Towar> TowarNaPlanszy;
 	private static int LiczbaNiebezpieczenstw = -1;
 	private static ArrayList<GenerujNiebezpieczenstwo> NiebezpieczenstwoNaPlanszy;
-	private Budynek WarsztatNaPlanszy;
-	private Budynek MennicaNaPlanszy;
+	private static Budynek WarsztatNaPlanszy;
+	private static Budynek MennicaNaPlanszy;
 	private static KlasaSpoleczna NiewolnikNaPlanszy;
 	private static KlasaSpoleczna RzemieslnikNaPlanszy;
 	private static KlasaSpoleczna ArystokrataNaPlanszy;
@@ -51,8 +51,8 @@ public class Plansza {
 	public static int getLiczbaTowarow() { return LiczbaTowarow; }
 	public static int getLiczbaNiebezpieczenstw() { return LiczbaNiebezpieczenstw; }
 	
-	public Budynek getWarsztatNaPlanszy() { return WarsztatNaPlanszy; }
-	public Budynek getMennicaNaPlanszy() { return MennicaNaPlanszy; }
+	public static Budynek getWarsztatNaPlanszy() { return WarsztatNaPlanszy; }
+	public static Budynek getMennicaNaPlanszy() { return MennicaNaPlanszy; }
 	
 	public static KlasaSpoleczna getNiewolnikNaPLanszy() { return NiewolnikNaPlanszy; }
 	public static KlasaSpoleczna getRzemieslnikNaPlanszy() { return RzemieslnikNaPlanszy; }

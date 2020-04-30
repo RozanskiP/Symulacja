@@ -17,12 +17,23 @@ public class Mennica extends Budynek {
 	public static void PlusTowary(Towar towar) {
 		if(towar.getXtowar() >= getXBudynek()-2 && towar.getXtowar() <= getXBudynek()+2)
 			if(towar.getYtowar() >= getYBudynek()-2 && towar.getYtowar() <= getYBudynek()+2) {
-				towar.setJedzenie(towar.getJedzenie()+DodatkoweTowaryPlus);
-				towar.setMaterialy(towar.getMaterialy()+DodatkoweTowaryPlus);
-				towar.setNarzedzia(towar.getNarzedzia()+DodatkoweTowaryPlus);
-				towar.setTowary(towar.getTowary()+DodatkoweTowaryPlus);
-				towar.setUbrania(towar.getUbrania()+DodatkoweTowaryPlus);
-				towar.setZloto(towar.getZloto()+DodatkoweTowaryPlus*2);
+				if(towar.getJedzenie() < 6 && towar.getMaterialy() < 6 && towar.getNarzedzia() < 6 && towar.getTowary() < 6 && towar.getUbrania() < 6 && towar.getZloto() < 6) {
+					towar.setJedzenie(towar.getJedzenie()+DodatkoweTowaryPlus);
+					towar.setMaterialy(towar.getMaterialy()+DodatkoweTowaryPlus);
+					towar.setNarzedzia(towar.getNarzedzia()+DodatkoweTowaryPlus);
+					towar.setTowary(towar.getTowary()+DodatkoweTowaryPlus);
+					towar.setUbrania(towar.getUbrania()+DodatkoweTowaryPlus);
+					towar.setZloto(towar.getZloto()+DodatkoweTowaryPlus);
+				}
 			}
 	}
+	/*
+	public static void main(String[] args) {
+		Towar towar = new Towar(4, 4);
+		//System.out.println(towar.getJedzenie());
+		Mennica warsztat = new Mennica(5, 5);
+		warsztat.PlusTowary(towar);
+		//System.out.println(towar.getJedzenie());
+	}
+	*/
 }
