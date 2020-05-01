@@ -15,9 +15,7 @@ public class Arystokracja extends KlasaSpoleczna{
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 
-				//System.out.println("Handlujemy");
 				if(klasa instanceof Niewolnicy || klasa instanceof Mieszczanie) {
-					System.out.println("5                                 HANDEL");
 					while(klasa.getZloto() != 0 && getJedzenie() != 0) {
 						klasa.setJedzenie(klasa.getJedzenie()+1);
 						setJedzenie(getJedzenie()-1);
@@ -48,7 +46,6 @@ public class Arystokracja extends KlasaSpoleczna{
 					}
 				}
 				if(klasa instanceof Rzemieslnicy || klasa instanceof Handlarze) {
-					System.out.println("6                                 HANDEL");
 					while(klasa.getZloto() != 0 && getNarzedzia() != 0) {
 						klasa.setNarzedzia(klasa.getNarzedzia()+1);
 						setNarzedzia(getNarzedzia()-1);

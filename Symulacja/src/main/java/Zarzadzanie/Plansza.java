@@ -1,6 +1,5 @@
 package Zarzadzanie;
 
-import java.io.IOException;
 import java.util.*;
 
 import KlasaSpoleczna.*;
@@ -67,23 +66,4 @@ public class Plansza {
 	public static void setArystokrataNaPlanszy(KlasaSpoleczna NowaKlasa) {
 		ArystokrataNaPlanszy = NowaKlasa;
 	}
-	
-	
-	public static void main(String[] args) throws IOException{
-		ZapisOdczyt odcz = new ZapisOdczyt();
-		odcz.Odczyt();
-		Plansza obj = new Plansza(odcz.getWielkoscPlanszyX(),odcz.getWielkoscPlanszyY());
-		
-		System.out.println(obj.getWarsztatNaPlanszy().getXBudynek());
-		System.out.println(obj.getWarsztatNaPlanszy().getYBudynek());
-		System.out.println(obj.getMennicaNaPlanszy().getXBudynek());
-		System.out.println(obj.getMennicaNaPlanszy().getYBudynek());
-		
-		for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
-			System.out.println();
-			System.out.println(niebez.getXniebezpieczenstwo());
-			System.out.println(niebez.getYniebezpieczenstwo());
-		}
-	}
-	
 }

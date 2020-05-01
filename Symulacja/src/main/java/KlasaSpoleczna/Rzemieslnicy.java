@@ -15,10 +15,7 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 
-				//System.out.println("Handlujemy");
-				
 				if(klasa instanceof Niewolnicy || klasa instanceof Mieszczanie) {
-					System.out.println("3                                  HANDEL");
 					while(klasa.getNarzedzia() != 0 && getJedzenie() != 0) {
 						klasa.setJedzenie(klasa.getJedzenie()+1);
 						setJedzenie(getJedzenie()-1);
@@ -49,7 +46,6 @@ public class Rzemieslnicy extends KlasaSpoleczna {
 					}
 				}
 				if(klasa instanceof Arystokracja || klasa instanceof Szlachta) {
-					System.out.println("4                                 HANDEL");
 					while(klasa.getNarzedzia() != 0 && getZloto() != 0 ) {
 						klasa.setNarzedzia(klasa.getNarzedzia()-1);
 						setNarzedzia(getNarzedzia()+1);

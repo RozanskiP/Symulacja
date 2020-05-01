@@ -18,8 +18,6 @@ public class Niewolnicy extends KlasaSpoleczna {
 				//System.out.println("Handlujemy");
 				
 				if(klasa instanceof Rzemieslnicy || klasa instanceof Handlarze) {
-					System.out.println("1                                 HANDEL");
-					
 					while(klasa.getJedzenie() != 0 && getNarzedzia() != 0) {
 						klasa.setJedzenie(klasa.getJedzenie()-1);
 						setJedzenie(getJedzenie()+1);
@@ -50,7 +48,6 @@ public class Niewolnicy extends KlasaSpoleczna {
 					}
 				}
 				if(klasa instanceof Arystokracja || klasa instanceof Szlachta) {
-					System.out.println("2                                 HANDEL");
 					while(klasa.getJedzenie() != 0 && getZloto() != 0 ) {
 						klasa.setJedzenie(klasa.getJedzenie()-1);
 						setJedzenie(getJedzenie()+1);
