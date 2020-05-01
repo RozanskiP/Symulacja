@@ -10,14 +10,14 @@ import KlasaSpoleczna.*;
 //Klasa do zapisu i odczytu danych z pliku
 public class ZapisOdczyt {
 	//Pola klasy ZapisOczyt
-	private float NiewolnicySzansa;
-	private float RzemieslnicySzansa;
-	private int ArystokracjaWiekszaPopulacja;
+	private static int NiewolnicySzansa;
+	private static int RzemieslnicySzansa;
+	private static int ArystokracjaWiekszaPopulacja;
 	private int WielkoscPlanszyX;
 	private int WielkoscPlanszyY;
-	private int PopulacjaStartowaNiewolnicy;
-	private int PopulacjaStartowaRzemieslnicy;
-	private int PopulacjaStartowaArystokracja;
+	private static int PopulacjaStartowaNiewolnicy;
+	private static int PopulacjaStartowaRzemieslnicy;
+	private static int PopulacjaStartowaArystokracja;
 	private static int POPULACJAMAX;
 	private static KlasaSpoleczna WygranaKlasa;
 	private static KlasaSpoleczna Miejsce2;
@@ -69,20 +69,20 @@ public class ZapisOdczyt {
 	public void Zapis() throws FileNotFoundException {
 		PrintWriter zapis = new PrintWriter("DaneKoncowe.txt");
 		
-		zapis.println("Wygra³a klasa : " + WygranaKlasa.toString());
-		zapis.println("zdobywaj¹c wymagan¹ populacje : " + WygranaKlasaPopulacja);
+		zapis.println("Wygra³a klasa : 				" + WygranaKlasa.toString());
+		zapis.println("zdobywaj¹c wymagan¹ populacje :	" + WygranaKlasaPopulacja);
 		zapis.println();
-		zapis.println("Klasa na drugim miejscu to : " + Miejsce2.toString());
-		zapis.println("zdobywaj¹c : " + Miejsce2Populacja);
+		zapis.println("Klasa na drugim miejscu to : 	" + Miejsce2.toString());
+		zapis.println("zdobywaj¹c :					" + Miejsce2Populacja);
 		zapis.println();
-		zapis.println("A na 3 miejscu znalaz³a sie : " + Miejsce3.toString());
-		zapis.println("zdobywaj¹c : " + Miejsce3Populacja);
+		zapis.println("A na 3 miejscu znalaz³a sie : 	" + Miejsce3.toString());
+		zapis.println("zdobywaj¹c : 					" + Miejsce3Populacja);
 		zapis.println();
-		zapis.println("Na planszy pojawi³o sie : " + Plansza.getLiczbaNiebezpieczenstw() + " Niebezpieczenstw");
+		zapis.println("Na planszy pozosta³o : " + Plansza.getNiebezpieczenstwoNaPlanszy().size() + " niezebranych Niebezpieczenstw");
 		zapis.println();
-		zapis.println("Na planszy pojawi³o sie : " + Plansza.getLiczbaTowarow() + " Towarów");
+		zapis.println("Na planszy pozosta³o : " + Plansza.getTowarNaPlanszy().size() + " niezebranych Towarów");
 		zapis.println();
-		zapis.println("Klasy zebra³y po (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)");
+		zapis.println("Klasy mia³y kontakt z (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)");
 		zapis.println("Niewolnicy   : " + Plansza.getNiewolnikNaPLanszy().getLicznikTowarow() + " : " + Plansza.getNiewolnikNaPLanszy().getLicznikNiebezpieczenstw());
 		zapis.println("Rzemieslnicy : " + Plansza.getRzemieslnikNaPlanszy().getLicznikTowarow() + " : " + Plansza.getRzemieslnikNaPlanszy().getLicznikNiebezpieczenstw());
 		zapis.println("Arystokracja : " + Plansza.getArystokrataNaPlanszy().getLicznikTowarow() + " : " + Plansza.getArystokrataNaPlanszy().getLicznikNiebezpieczenstw());
@@ -94,20 +94,20 @@ public class ZapisOdczyt {
 
 	
 	//Wszystkie setet i getery pol
-	public float getNiewolnicySzansa() { return NiewolnicySzansa; }
-	public float getRzemieslnicySzansa() { return RzemieslnicySzansa; }
-	public int getArystokracjaWiekszaPopulacja() {
+	public static int getNiewolnicySzansa() { return NiewolnicySzansa; }
+	public static int getRzemieslnicySzansa() { return RzemieslnicySzansa; }
+	public static int getArystokracjaWiekszaPopulacja() {
 		return ArystokracjaWiekszaPopulacja;
 	}
 	public int getWielkoscPlanszyX() { return WielkoscPlanszyX; }
 	public int getWielkoscPlanszyY() { return WielkoscPlanszyY; }
-	public int getPopulacjaStartowaNiewolnicy() {
+	public static int getPopulacjaStartowaNiewolnicy() {
 		return PopulacjaStartowaNiewolnicy;
 	}
-	public int getPopulacjaStartowaRzemieslnicy() {
+	public static int getPopulacjaStartowaRzemieslnicy() {
 		return PopulacjaStartowaRzemieslnicy;
 	}
-	public int getPopulacjaStartowaArystokracja() {
+	public static int getPopulacjaStartowaArystokracja() {
 		return PopulacjaStartowaArystokracja;
 	}
 	public static int getPOPULACJAMAX() {

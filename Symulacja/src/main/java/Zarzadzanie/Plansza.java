@@ -13,9 +13,7 @@ import RandomoweLiczby.*;
 public class Plansza {
 	private static int Xplanszy;
 	private static int Yplanszy;
-	private static int LiczbaTowarow= -1;
 	private static ArrayList<Towar> TowarNaPlanszy;
-	private static int LiczbaNiebezpieczenstw = -1;
 	private static ArrayList<GenerujNiebezpieczenstwo> NiebezpieczenstwoNaPlanszy;
 	private static Budynek WarsztatNaPlanszy;
 	private static Budynek MennicaNaPlanszy;
@@ -28,9 +26,7 @@ public class Plansza {
 		Xplanszy = X;
 		Yplanszy = Y;
 		TowarNaPlanszy = new ArrayList<>();
-		LiczbaTowarow = 0;
 		NiebezpieczenstwoNaPlanszy = new ArrayList<>();
-		LiczbaNiebezpieczenstw = 0;
 		NiewolnikNaPlanszy = new Niewolnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
 		RzemieslnikNaPlanszy = new Rzemieslnicy(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
 		ArystokrataNaPlanszy = new Arystokracja(GeneratorRandom.RandomOd1(Xplanszy), GeneratorRandom.RandomOd1(Yplanszy));
@@ -38,6 +34,12 @@ public class Plansza {
 		MennicaNaPlanszy = new Mennica(GeneratorRandom.RandomOd1(Xplanszy),GeneratorRandom.RandomOd1(Yplanszy));
 	}
 	
+	
+	
+	public static void setMennicaNaPlanszy(Budynek mennicaNaPlanszy) {
+		MennicaNaPlanszy = mennicaNaPlanszy;
+	}
+
 	public static int getXplanszy() { return Xplanszy; }
 	public static int getYplanszy() { return Yplanszy; }
 	
@@ -49,8 +51,6 @@ public class Plansza {
 	public static void setNiebezpieczenstwoNaPlanszy(GenerujNiebezpieczenstwo niebezpieczenstwo) {
 		NiebezpieczenstwoNaPlanszy.add(niebezpieczenstwo);
 	}
-	public static int getLiczbaTowarow() { return LiczbaTowarow; }
-	public static int getLiczbaNiebezpieczenstw() { return LiczbaNiebezpieczenstw; }
 	
 	public static Budynek getWarsztatNaPlanszy() { return WarsztatNaPlanszy; }
 	public static Budynek getMennicaNaPlanszy() { return MennicaNaPlanszy; }
@@ -74,8 +74,10 @@ public class Plansza {
 		odcz.Odczyt();
 		Plansza obj = new Plansza(odcz.getWielkoscPlanszyX(),odcz.getWielkoscPlanszyY());
 		
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
-		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
+		System.out.println(obj.getWarsztatNaPlanszy().getXBudynek());
+		System.out.println(obj.getWarsztatNaPlanszy().getYBudynek());
+		System.out.println(obj.getMennicaNaPlanszy().getXBudynek());
+		System.out.println(obj.getMennicaNaPlanszy().getYBudynek());
 		
 		for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
 			System.out.println();

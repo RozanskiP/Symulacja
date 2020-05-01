@@ -1,7 +1,7 @@
 DANE DLA KLAS
-Szansa Niewolnikow na zdobycie dwóch razy wiêcej towarów(%) : 5
-Szansa Rzemieslnikow na unikniêcie niebezpieczeczenstwa(%) : 8
-Arystokracja ma pocz¹tkow¹ wiêksza ni¿ reszta populacje o(%) : 3
+Szansa Niewolnikow na zdobycie dwóch razy wiêcej towarów(%) : 13
+Szansa Rzemieslnikow na unikniêcie niebezpieczeczenstwa(%) : 50
+Arystokracja ma pocz¹tkow¹ wiêksza ni¿ reszta populacje o(%) : 24
 
 DANE PLANSZY
 Szerokoœæ Planszy(X) : 25

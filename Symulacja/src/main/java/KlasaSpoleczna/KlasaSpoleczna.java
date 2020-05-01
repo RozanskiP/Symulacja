@@ -14,8 +14,8 @@ public abstract class KlasaSpoleczna {
 	private int Materialy;
 	private int Zloto;
 	private int Towary;
-	private static int LicznikTowarow;
-	private static int LicznikNiebezpieczenstw;
+	private int LicznikTowarow;
+	private int LicznikNiebezpieczenstw;
 	
 	public KlasaSpoleczna(int X, int Y){
 		Xpolozenie = X;
