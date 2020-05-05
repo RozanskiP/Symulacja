@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Wygra³a klasa : 				Mieszczanie
 zdobywaj¹c wymagan¹ populacje :	1509
 
@@ -17,3 +18,24 @@ Rzemieslnicy : 409 : 26
 Arystokracja : 292 : 70
 
 Liczba Tura wynosi³a: 973
+=======
+Wygraï¿½a klasa : 				Handlarze
+zdobywajï¿½c wymaganï¿½ populacje :	2233
+
+Klasa na drugim miejscu to : 	Arystokracja
+zdobywajï¿½c :					1213
+
+A na 3 miejscu znalazï¿½a sie : 	Niewolnicy
+zdobywajï¿½c : 					1048
+
+Na planszy pozostaï¿½o : 530 niezebranych Niebezpieczenstw
+
+Na planszy pozostaï¿½o : 502 niezebranych Towarï¿½w
+
+Klasy miaï¿½y kontakt z (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)
+Niewolnicy   : 262 : 88
+Rzemieslnicy : 436 : 32
+Arystokracja : 322 : 62
+
+Liczba Tura wynosiï¿½a: 761
+>>>>>>> origin/master

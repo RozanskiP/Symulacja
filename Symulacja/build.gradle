@@ -10,4 +10,8 @@ dependencies {
    testCompile 'junit:junit:4.12'         // JUnit dependency for testing
 }
 
+<<<<<<< HEAD
 mainClassName = 'Zarzadzanie.Main'  // Main class with main method
+=======
+mainClassName = 'Zarzadzanie.Main' // Main class with main method
+>>>>>>> origin/master
