@@ -1,41 +1,19 @@
-<<<<<<< HEAD
-Wygra³a klasa : 				Mieszczanie
-zdobywaj¹c wymagan¹ populacje :	1509
+Wygra³a klasa : 				Handlarze
+zdobywaj¹c wymagan¹ populacje :	1501
 
-Klasa na drugim miejscu to : 	Arystokracja
-zdobywaj¹c :					934
+Klasa na drugim miejscu to : 	Mieszczanie
+zdobywaj¹c :					1455
 
-A na 3 miejscu znalaz³a sie : 	Rzemieslnicy
-zdobywaj¹c : 					780
+A na 3 miejscu znalaz³a sie : 	Arystokracja
+zdobywaj¹c : 					789
 
-Na planszy pozosta³o : 766 niezebranych Niebezpieczenstw
+Na planszy pozosta³o : 1093 niezebranych Niebezpieczenstw
 
-Na planszy pozosta³o : 848 niezebranych Towarów
+Na planszy pozosta³o : 1156 niezebranych Towarów
 
 Klasy mia³y kontakt z (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)
-Niewolnicy   : 397 : 89
-Rzemieslnicy : 409 : 26
-Arystokracja : 292 : 70
+Niewolnicy   : 583 : 115
+Rzemieslnicy : 763 : 69
+Arystokracja : 470 : 114
 
-Liczba Tura wynosi³a: 973
-=======
-Wygraï¿½a klasa : 				Handlarze
-zdobywajï¿½c wymaganï¿½ populacje :	2233
-
-Klasa na drugim miejscu to : 	Arystokracja
-zdobywajï¿½c :					1213
-
-A na 3 miejscu znalazï¿½a sie : 	Niewolnicy
-zdobywajï¿½c : 					1048
-
-Na planszy pozostaï¿½o : 530 niezebranych Niebezpieczenstw
-
-Na planszy pozostaï¿½o : 502 niezebranych Towarï¿½w
-
-Klasy miaï¿½y kontakt z (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)
-Niewolnicy   : 262 : 88
-Rzemieslnicy : 436 : 32
-Arystokracja : 322 : 62
-
-Liczba Tura wynosiï¿½a: 761
->>>>>>> origin/master
+Liczba Tura wynosi³a: 1486
