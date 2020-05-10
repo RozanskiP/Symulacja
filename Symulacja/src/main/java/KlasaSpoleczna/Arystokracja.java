@@ -1,17 +1,20 @@
 package KlasaSpoleczna;
 
+//KlasaSpoleczna typu Arystokracja
 public class Arystokracja extends KlasaSpoleczna{
 	
-	
+	//Konstruktor klasy Arystokracja
 	public Arystokracja(int Xarystokracja, int Yarystokracja) {
 		super(Xarystokracja, Yarystokracja);
 	}
 	
+	//Przeciazenie metody toString wyswietlajacej nazwe funkcji
 	@Override
 	public String toString() {
 		return "Arystokracja";
 	}
 	
+	//Metoda sprawdzajaca i przeprowadzajaca handel z klasa podana jako argument
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 

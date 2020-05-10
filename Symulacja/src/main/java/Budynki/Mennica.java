@@ -2,6 +2,7 @@ package Budynki;
 
 import Towar.*;
 
+//Budynek typu Mennica która dodaje dodatkowe towary które znajduj¹ sie w jej zasiegu
 public class Mennica extends Budynek {
 	//Sta³a ktora bedzie dodawana do towarow w zasiegu Mennicy
 	private final static int DodatkoweTowaryPlus = 3;

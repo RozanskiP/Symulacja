@@ -2,6 +2,7 @@ package Budynki;
 
 import Towar.*;
 
+//Budynek typu Warsztat która wymna¿a towary które znajduj¹ sie w jej zasiegu
 public class Warsztat extends Budynek{
 	//Stala przez ktora bêd¹ mnozone towary w zasiegu Warsztatu
 	private final static int DodatkoweTowaryWymnoz = 2;
@@ -13,7 +14,6 @@ public class Warsztat extends Budynek{
 	}
 	
 	//Metoda ktora wymnaza towar ktory znajduje sie w zasiegu Warsztatu
-	//<zrobic testy>
 	public static void WymanazajTowary(Towar towar) {
 		if(towar.getXtowar() >= Budynek.XBudynek-2 && towar.getXtowar() <= Budynek.XBudynek+2)
 			if(towar.getYtowar() >= Budynek.YBudynek-2 && towar.getYtowar() <= Budynek.YBudynek+2) {
@@ -27,14 +27,5 @@ public class Warsztat extends Budynek{
 				}
 			}
 	}
-	/*
-	public static void main(String[] args) {
-		Towar towar = new Towar(4, 4);
-		//System.out.println(towar.getJedzenie());
-		Warsztat warsztat = new Warsztat(5, 5);
-		warsztat.WymanazajTowary(towar);
-		//System.out.println(towar.getJedzenie());
-	}
-	*/
 }
 

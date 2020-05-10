@@ -4,6 +4,7 @@ import RandomoweLiczby.*;
 import Towar.*;
 import Zarzadzanie.Plansza;
 
+//Abstraktyjna klasa KlasaSpoleczna posiadaj¹ca metody i pola dla ka¿dej z klas
 public abstract class KlasaSpoleczna {
 	private int Populacja;
 	private int Xpolozenie;
@@ -17,6 +18,7 @@ public abstract class KlasaSpoleczna {
 	private int LicznikTowarow;
 	private int LicznikNiebezpieczenstw;
 	
+	//Konstruktor Abstraktycjny z nadaniem wartosci poczatkowych
 	public KlasaSpoleczna(int X, int Y){
 		Xpolozenie = X;
 		Ypolozenie = Y;
@@ -29,7 +31,7 @@ public abstract class KlasaSpoleczna {
 		LicznikTowarow = 0;
 		LicznikNiebezpieczenstw = 0;
 	}
-	
+	//Metoda wykonujaca ruch KlasySpolecznej po Planszy
 	public void Ruch() {
 		
 		int a = Xpolozenie;
@@ -47,9 +49,11 @@ public abstract class KlasaSpoleczna {
 		this.Ypolozenie = b;
 	}
 	
+	//Metody abstrakcyjne dla pozniejszego zaimplementowania
 	public abstract void Handel(KlasaSpoleczna klasa);
 	public abstract String toString();
 	
+	//Metoda zbierajaca Towar podany jako argument w funkcji
 	public void ZbieranieTowarow(Towar towar) {
 		setJedzenie(getJedzenie()+towar.getJedzenie());
 		setUbrania(getUbrania()+towar.getUbrania());
@@ -59,6 +63,7 @@ public abstract class KlasaSpoleczna {
 		setZloto(getZloto()+towar.getZloto());
 	}
 	
+	//Getery i Setery dla kazdego z pol
 	public int getPopulacja() { return this.Populacja; }
 	public void setPopulacja(int Populacja) { this.Populacja = Populacja; }
 	public int getXpolozenie() { return this.Xpolozenie; }
@@ -77,20 +82,8 @@ public abstract class KlasaSpoleczna {
 	public void setZloto(int zloto) { Zloto = zloto; }
 	public int getTowary() { return Towary;}
 	public void setTowary(int towary) { Towary = towary; }
-
-	public int getLicznikTowarow() {
-		return LicznikTowarow;
-	}
-
-	public void setLicznikTowarow(int licznikTowarow) {
-		LicznikTowarow = licznikTowarow;
-	}
-
-	public int getLicznikNiebezpieczenstw() {
-		return LicznikNiebezpieczenstw;
-	}
-
-	public void setLicznikNiebezpieczenstw(int licznikNiebezpieczenstw) {
-		LicznikNiebezpieczenstw = licznikNiebezpieczenstw;
-	}
+	public int getLicznikTowarow() { return LicznikTowarow;}
+	public void setLicznikTowarow(int licznikTowarow) { LicznikTowarow = licznikTowarow; }
+	public int getLicznikNiebezpieczenstw() { return LicznikNiebezpieczenstw; }
+	public void setLicznikNiebezpieczenstw(int licznikNiebezpieczenstw) { LicznikNiebezpieczenstw = licznikNiebezpieczenstw; }
 }
