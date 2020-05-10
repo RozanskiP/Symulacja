@@ -2,15 +2,16 @@ package Zarzadzanie;
 
 import java.io.IOException;
 
+//Klasa Main przeprowadzajaca ca³a symulacje w odpowiedniej kolejnosci
 public class Main {
 	
+	//Metoda przeprowadzajaca cala symulacja
 	public static void main() throws IOException {
 		ZapisOdczyt zapisodczyt = new ZapisOdczyt();
 		zapisodczyt.Odczyt();
 		
 		Plansza plansza = new Plansza(zapisodczyt.getWielkoscPlanszyX(),zapisodczyt.getWielkoscPlanszyY());
 		Tura tura = new Tura();
-		
 		
 		tura.DaneStartowe();
 		do{
@@ -27,12 +28,11 @@ public class Main {
 			System.out.println();
 		}while(!tura.Wygrana());
 		
-		
 		zapisodczyt.Zapis();
 		System.out.println("Symulacja dobieg³a koñca! z iloœci¹ tur równ¹ " + Tura.getLicznikTur());
 	}
 	
-	
+	//Statyczna metoda main uruchamajaca symulacje
 	public static void main(String[] args) throws IOException{
 		main();
 	}

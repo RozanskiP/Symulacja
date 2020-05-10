@@ -1,17 +1,20 @@
 package KlasaSpoleczna;
 
+//KlasaSpoleczna typu Rzemieslnicy
 public class Rzemieslnicy extends KlasaSpoleczna {
 	
-	
+	//Konstruktor klasy Rzemieslnicy
 	public Rzemieslnicy(int Xrzemieslnicy, int Yrzemieslnicy) {
 		super(Xrzemieslnicy, Yrzemieslnicy);
 	}
 	
+	//Przeciazenie metody toString wyswietlajacej nazwe funkcji
 	@Override
 	public String toString() {
 		return "Rzemieslnicy";
 	}
 	
+	//Metoda sprawdzajaca i przeprowadzajaca handel z klasa podana jako argument
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 

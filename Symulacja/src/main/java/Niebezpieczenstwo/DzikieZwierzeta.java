@@ -3,12 +3,13 @@ package Niebezpieczenstwo;
 
 import RandomoweLiczby.GeneratorRandom;
 
+//Klasa tworzaca niebezpieczenstwo ktore zabija Niewolnika
 public class DzikieZwierzeta implements Niebezpieczenstwo {
 	
-	public DzikieZwierzeta() {
-		//System.out.println("Utworzona DzikieZwierzeta");
-	}
+	//Konstruktor domyslny
+	public DzikieZwierzeta() { }
 	
+	//Metoda przecia¿ona zmniejszajaca ilosc
 	@Override
 	public int ZmniejszIloscPopulacja() {
 		int a  = GeneratorRandom.RandomOd1(2);

@@ -6,20 +6,22 @@ import Towar.Towar;
 import Niebezpieczenstwo.*;
 import Budynki.*;
 
+//Klasa Tura posiadajaca wszystkie glowne metody do przeprowadzenia symulacji
 public class Tura {
 	private static int LicznikTur;
 	
-	
+	//Konstruktor przeciazony przypisujacy wartosc poczatkowa liczby tur
 	public Tura() {
 		LicznikTur = 0;
 	}
 	
-	
+	//Geter i Seter LicznikaTur
 	public static int getLicznikTur() { return LicznikTur; }
 	public void setLicznikTur(int licznikTur) { LicznikTur = licznikTur; }
 	
+	//Metoda tworzaca dane startowe uzywana tylko raz na poczatku programu
 	public void DaneStartowe() {
-		//System.out.println("DaneStartowe");
+		System.out.println("DaneStartowe");
 		Plansza.getNiewolnikNaPLanszy().setJedzenie(ZapisOdczyt.getPopulacjaStartowaNiewolnicy());
 		Plansza.getNiewolnikNaPLanszy().setUbrania(ZapisOdczyt.getPopulacjaStartowaNiewolnicy());
 		Plansza.getRzemieslnikNaPlanszy().setMaterialy(ZapisOdczyt.getPopulacjaStartowaRzemieslnicy());
@@ -28,16 +30,17 @@ public class Tura {
 		Plansza.getArystokrataNaPlanszy().setTowary((int) (ZapisOdczyt.getPopulacjaStartowaArystokracja() + ZapisOdczyt.getArystokracjaWiekszaPopulacja()*ZapisOdczyt.getPopulacjaStartowaArystokracja()*0.01));
 	}
 	
-	
+	//Metoda wywolujaca ruch kazdej z klas
 	public void RuchyKlas() {
-		//System.out.println("RuchyKlas");
+		System.out.println("RuchyKlas");
 		Plansza.getNiewolnikNaPLanszy().Ruch();
 		Plansza.getRzemieslnikNaPlanszy().Ruch();
 		Plansza.getArystokrataNaPlanszy().Ruch();
 	}
 	
+	//Metoda wywolujaca handel dla kazdej z klas miedzy soba
 	public void HandelKlas() {
-		//System.out.println("HandelKlas");
+		System.out.println("HandelKlas");
 		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
 		Plansza.getNiewolnikNaPLanszy().Handel(Plansza.getArystokrataNaPlanszy());
 		
@@ -48,8 +51,9 @@ public class Tura {
 		Plansza.getArystokrataNaPlanszy().Handel(Plansza.getRzemieslnikNaPlanszy());
 	}
 	
+	//Metoda - Zbieranie przez KlasySpoleczne towarow z jej zasiegu
 	public void ZbierzTowaryKlas() {
-		//System.out.println("ZbierzTowaryKlas");
+		System.out.println("ZbierzTowaryKlas");
 		for(int i=0;i<Plansza.getTowarNaPlanszy().size();i++) {
 			for(Towar towar : Plansza.getTowarNaPlanszy()) {
 				
@@ -87,18 +91,18 @@ public class Tura {
 		}
 	}
 	
-	//Aktualizacja planszy w nowe towary i niebezpieczenstwa
+	//Metoda - Aktualizacja planszy w dwa nowe towary i jedno niebezpieczenstwo
 	public void AktualizacjaPlanszy() {
-		//System.out.println("AktualizacjaPlanszy");
+		System.out.println("AktualizacjaPlanszy");
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		Plansza.setTowarNaPlanszy(new Towar(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 		
 		Plansza.setNiebezpieczenstwoNaPlanszy(new GenerujNiebezpieczenstwo(GeneratorRandom.RandomOd1(Plansza.getXplanszy()), GeneratorRandom.RandomOd1(Plansza.getYplanszy())));
 	}
 	
-	//Aktualizacja populacji po handlu i zbieraniu towarow
+	//Metoda - Aktualizacja populacji po handlu i zbieraniu towarow
 	public void AktualizacjaPopulacjiKlas() {
-		//System.out.println("AktualizacjaPopulacjiKlas");
+		System.out.println("AktualizacjaPopulacjiKlas");
 		if(Plansza.getNiewolnikNaPLanszy().getJedzenie() >= Plansza.getNiewolnikNaPLanszy().getUbrania()) {
 			Plansza.getNiewolnikNaPLanszy().setPopulacja(Plansza.getNiewolnikNaPLanszy().getUbrania());
 		}
@@ -121,8 +125,10 @@ public class Tura {
 		}
 	}
 	
+	//Metoda "zabijajaca" (zmiejszajaca ilosc populacji) odpowiedniej KlasySpolecznego, gdy ktoras klas jest w jej zasiegu
+	//I KlasaSpoleczna natrafi na swojego zabojce
 	public void Zabojstwa() {
-		//System.out.println("Zabojstwa");
+		System.out.println("Zabojstwa");
 		for(int i=0;i<Plansza.getNiebezpieczenstwoNaPlanszy().size();i++) {
 			for(GenerujNiebezpieczenstwo niebez : Plansza.getNiebezpieczenstwoNaPlanszy()) {
 
@@ -183,17 +189,19 @@ public class Tura {
 			}
 		}
 	}
-	//Dodanie dodatkowych bonusów dla towarów, które s¹ w zasiêgu pola dzia³ania
+	//Metoda - Dodanie dodatkowych bonusów dla towarów, które s¹ w zasiêgu pola dzia³ania
 	public void BudynkiNaPlanszy() {
-		//System.out.println("BudynkiNaPlanszy");
+		System.out.println("BudynkiNaPlanszy");
 		for(Towar towar : Plansza.getTowarNaPlanszy()) {
 			Warsztat.WymanazajTowary(towar);
 			Mennica.PlusTowary(towar);
 		}
 	}
 	
+	//Metoda sprawdzajacy czy ktora z klas zdobywa wymagana ilosc populacji do zwyciestwa
+	//zwraca true gdy ktoras z klas wygra
 	public boolean Wygrana() {
-		//System.out.println("Wygrana");
+		System.out.println("Wygrana");
 		if(SprawdzanieWygranej.WygranaNiewolnikow()) {
 			ZapisOdczyt.setWygranaKlasa(Plansza.getNiewolnikNaPLanszy());
 			ZapisOdczyt.setWygranaKlasaPopulacja(Plansza.getNiewolnikNaPLanszy().getPopulacja());
@@ -255,8 +263,10 @@ public class Tura {
 		return false;
 	}
 	
+	//Metoda sprawdzajacy czy ktora z KlasSpoleczny nie osiagnela wymaganej populacji do awansu spolecznego
+	//jesli tak to zmienia odpowiednia Klase na nowa
 	public void AwansSpoleczny() {
-		//System.out.println("AwansSpoleczny");
+		System.out.println("AwansSpoleczny");
 		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()*0.67 && Plansza.getNiewolnikNaPLanszy() instanceof Niewolnicy) {
 			Plansza.setNiewolnikNaPlanszy(new Mieszczanie(Plansza.getNiewolnikNaPLanszy()));
 		}

@@ -1,17 +1,20 @@
 package KlasaSpoleczna;
 
+//KlasaSpoleczna typu Niewolnicy
 public class Niewolnicy extends KlasaSpoleczna {
 	
-	
+	//Konstruktor klasy Niewolnicy
 	public Niewolnicy(int Xniewolnicy, int Yniewolnicy) {
 		super(Xniewolnicy, Yniewolnicy);
 	}
 	
+	//Przeciazenie metody toString wyswietlajacej nazwe funkcji
 	@Override
 	public String toString() {
 		return "Niewolnicy";
 	}
 	
+	//Metoda sprawdzajaca i przeprowadzajaca handel z klasa podana jako argument
 	public void Handel(KlasaSpoleczna klasa) {
 		if(klasa.getXpolozenie() >= getXpolozenie()-1 && klasa.getXpolozenie() <= getXpolozenie()+1) 
 			if(klasa.getYpolozenie() >= getYpolozenie()-1 && klasa.getYpolozenie() <= getYpolozenie()+1) { 

@@ -1,7 +1,9 @@
 package Zarzadzanie;
 
+//Klasa sprawdzajaca czy ktora z KlasSpolecznych wygra³a
 public class SprawdzanieWygranej {
 
+	//Metoda dla Niewolnikow zwracajaca true jesli Populacja przekroczyla zadana liczbe
 	public static boolean WygranaNiewolnikow() {
 		if(Plansza.getNiewolnikNaPLanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
@@ -11,6 +13,7 @@ public class SprawdzanieWygranej {
 		}
 	}
 	
+	//Metoda dla Rzemieslnikow zwracajaca true jesli Populacja przekroczyla zadana liczbe
 	public static boolean WygranaRzemieslnikow() {
 		if(Plansza.getRzemieslnikNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
@@ -20,6 +23,7 @@ public class SprawdzanieWygranej {
 		}
 	}
 	
+	//Metoda dla Arystokracji zwracajaca true jesli Populacja przekroczyla zadana liczbe
 	public static boolean WygranaArystokracji() {
 		if(Plansza.getArystokrataNaPlanszy().getPopulacja() >= ZapisOdczyt.getPOPULACJAMAX()) {
 			return true;
@@ -28,16 +32,4 @@ public class SprawdzanieWygranej {
 			return false;
 		}
 	}
-	
-	/*
-	public static void main(String [] args) throws IOException{
-		ZapisOdczyt odcz = new ZapisOdczyt();
-		odcz.Odczyt();
-		Plansza obj = new Plansza(odcz.getWielkoscPlanszyX(),odcz.getWielkoscPlanszyY());
-		
-		SprawdzanieWygranej spr = new SprawdzanieWygranej();
-		
-		System.out.println(spr.WygranaNiewolnikow());
-	}
-	*/
 }

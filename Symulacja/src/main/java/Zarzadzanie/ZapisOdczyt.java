@@ -93,7 +93,7 @@ public class ZapisOdczyt {
 	}
 
 	
-	//Wszystkie setet i getery pol
+	//Getery i Setery
 	public static int getNiewolnicySzansa() { return NiewolnicySzansa; }
 	public static int getRzemieslnicySzansa() { return RzemieslnicySzansa; }
 	public static int getArystokracjaWiekszaPopulacja() {

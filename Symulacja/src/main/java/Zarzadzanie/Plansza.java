@@ -8,7 +8,7 @@ import Towar.*;
 import Budynki.*;
 import RandomoweLiczby.*;
 
-
+//Klasa zawierajaca wszystkie obiekty z planszy i nadajaca im wartosci poczatkowe
 public class Plansza {
 	private static int Xplanszy;
 	private static int Yplanszy;
@@ -20,7 +20,7 @@ public class Plansza {
 	private static KlasaSpoleczna RzemieslnikNaPlanszy;
 	private static KlasaSpoleczna ArystokrataNaPlanszy;
 	
-	
+	//Konstruktor przeciazony z argumentami nadajacymi rozmiar planszy i generujacy poczatkowe polozenia wszystkich obiektow planszy
 	public Plansza(int X, int Y) {
 		Xplanszy = X;
 		Yplanszy = Y;
@@ -34,7 +34,7 @@ public class Plansza {
 	}
 	
 	
-	
+	//Getery i Setery
 	public static void setMennicaNaPlanszy(Budynek mennicaNaPlanszy) {
 		MennicaNaPlanszy = mennicaNaPlanszy;
 	}
