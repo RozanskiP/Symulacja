@@ -1,15 +1,15 @@
 DANE DLA KLAS
 Szansa Niewolnikow na zdobycie dwóch razy wiêcej towarów(%) : 13
-Szansa Rzemieslnikow na unikniêcie niebezpieczeczenstwa(%) : 50
-Arystokracja ma pocz¹tkow¹ wiêksza ni¿ reszta populacje o(%) : 24
+Szansa Rzemieslnikow na unikniêcie niebezpieczeczenstwa(%) : 15
+Arystokracja ma pocz¹tkow¹ wiêksza ni¿ reszta populacje o(%) : 10
 
 DANE PLANSZY
-Szerokoœæ Planszy(X) : 40
-Wysokoœæ Planszy(Y) : 40
+Szerokoœæ Planszy(X) : 100
+Wysokoœæ Planszy(Y) : 70
 
 DANE GRY
-Populacja startowa Niewolników : 200
+Populacja startowa Niewolników : 15
 Populacja startowa Rzemieslników : 15
-Populacja startowa Arystokracji : 18
+Populacja startowa Arystokracji : 15
 
-Populacja po osi¹gniêciu, której któraœ klasa zwyciê¿y : 1500
+Populacja po osi¹gniêciu, której któraœ klasa zwyciê¿y : 200

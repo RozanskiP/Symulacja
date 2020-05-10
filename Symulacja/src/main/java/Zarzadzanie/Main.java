@@ -2,6 +2,9 @@ package Zarzadzanie;
 
 import java.io.IOException;
 
+import GUI;
+import GUI.Symulacja;
+
 public class Main {
 	
 	public static void main() throws IOException {
@@ -25,6 +28,7 @@ public class Main {
 			tura.setLicznikTur(Tura.getLicznikTur()+1);
 			System.out.println("Tura: " + Tura.getLicznikTur());
 			System.out.println();
+			Symulacja.renderPanel.repaint();
 		}while(!tura.Wygrana());
 		
 		

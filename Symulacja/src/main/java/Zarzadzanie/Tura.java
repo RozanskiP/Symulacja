@@ -192,7 +192,7 @@ public class Tura {
 		}
 	}
 	
-	public boolean Wygrana() {
+	public static boolean Wygrana() {
 		//System.out.println("Wygrana");
 		if(SprawdzanieWygranej.WygranaNiewolnikow()) {
 			ZapisOdczyt.setWygranaKlasa(Plansza.getNiewolnikNaPLanszy());

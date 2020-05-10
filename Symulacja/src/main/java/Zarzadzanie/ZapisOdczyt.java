@@ -113,7 +113,7 @@ public class ZapisOdczyt {
 	public static int getPOPULACJAMAX() {
 		return POPULACJAMAX;
 	}
-	public KlasaSpoleczna getWygranaKlasa() {
+	public static KlasaSpoleczna getWygranaKlasa() {
 		return WygranaKlasa;
 	}
 	public static void setWygranaKlasa(KlasaSpoleczna wygranaKlasa) {
