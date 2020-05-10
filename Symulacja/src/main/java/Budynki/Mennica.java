@@ -28,13 +28,4 @@ public class Mennica extends Budynek {
 				}
 			}
 	}
-	/*
-	public static void main(String[] args) {
-		Towar towar = new Towar(4, 4);
-		//System.out.println(towar.getJedzenie());
-		Mennica warsztat = new Mennica(5, 5);
-		warsztat.PlusTowary(towar);
-		//System.out.println(towar.getJedzenie());
-	}
-	*/
 }
