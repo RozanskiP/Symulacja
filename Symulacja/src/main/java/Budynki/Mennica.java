@@ -14,7 +14,6 @@ public class Mennica extends Budynek {
 	}
 	
 	//Metoda ktora dodaje dodatkowe towary do nich je¿eli znajduja sie w zasiegu Mennicy
-	//<zrobic testy>
 	public static void PlusTowary(Towar towar) {
 		if(towar.getXtowar() >= Budynek.XBudynek-2 && towar.getXtowar() <= Budynek.XBudynek+2)
 			if(towar.getYtowar() >= Budynek.YBudynek-2 && towar.getYtowar() <= Budynek.YBudynek+2) {
