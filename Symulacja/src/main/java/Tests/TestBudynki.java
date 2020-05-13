@@ -1,15 +1,15 @@
 package Tests;
 
-//import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
-//import org.junit.Test;
+import org.junit.Test;
 
 import Budynki.*;
 import RandomoweLiczby.GeneratorRandom;
 import Towar.*;
 
 public class TestBudynki {
-/*
+
 	@Test
 	public void testMennicaIlosc() {
 		Towar towar1 = new Towar(0, 0);
@@ -68,5 +68,5 @@ public class TestBudynki {
 		}
 		return false;
 	}
-	*/
+	
 }
