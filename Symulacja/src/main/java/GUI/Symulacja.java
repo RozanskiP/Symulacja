@@ -29,10 +29,6 @@ public class Symulacja {
 		Main.main();
 	}
 	
-	
-	
-	
-	
 	public static void main(String[] args)  throws IOException  {
 		Symulacja sum = new Symulacja();
 	}

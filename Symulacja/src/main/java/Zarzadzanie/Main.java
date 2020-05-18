@@ -2,7 +2,6 @@ package Zarzadzanie;
 
 import java.io.IOException;
 
-import GUI;
 import GUI.Symulacja;
 
 public class Main {
