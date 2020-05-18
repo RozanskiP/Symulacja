@@ -1,5 +1,11 @@
 package Zarzadzanie;
 
+/*
+ * @author Pawe³ Ró¿añski
+ * @author Wojtek Bednarczyk
+ */
+
+
 import java.io.IOException;
 
 //Klasa Main przeprowadzajaca ca³a symulacje w odpowiedniej kolejnosci

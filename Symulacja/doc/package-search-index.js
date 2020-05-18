@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"Budynki"},{"l":"KlasaSpoleczna"},{"l":"Niebezpieczenstwo"},{"l":"RandomoweLiczby"},{"l":"Towar"},{"l":"Zarzadzanie"}]
