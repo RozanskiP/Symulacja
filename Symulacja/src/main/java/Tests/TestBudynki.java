@@ -1,7 +1,6 @@
 package Tests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import Budynki.*;
@@ -40,6 +39,7 @@ public class TestBudynki {
 	
 	@Test
 	public void testMennicaWarsztatPolozenie() {
+		//Sprawdzanie odpowiednie przypisania dla Budynkow
 		assertTrue(polozenieMennica());
 		assertTrue(polozenieWarsztat());
 	}

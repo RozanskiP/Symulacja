@@ -11,8 +11,8 @@ public class GenerujNiebezpieczenstwo {
 	
 	//Konstruktor przeciazony wybierajacy losowo jednego z 3 zabojców
 	public GenerujNiebezpieczenstwo(int X, int Y) {
-		Xniebezpieczenstwo = GeneratorRandom.RandomOd1(Plansza.getXplanszy());
-		Yniebezpieczenstwo = GeneratorRandom.RandomOd1(Plansza.getYplanszy());
+		Xniebezpieczenstwo = X;
+		Yniebezpieczenstwo = Y;
 		int a = GeneratorRandom.RandomOd1(3);
 		switch(a) {
 		case 1: Zabojca = new Bandyci();
