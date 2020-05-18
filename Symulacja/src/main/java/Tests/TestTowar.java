@@ -19,12 +19,12 @@ public class TestTowar {
 	public void testZawartosci() {
 		Towar towar = new Towar(5, 5);
 		//3 bo przy ziarnie generatora tyle wynosi liczba utowrzonych elementow
-		assertEquals(3, towar.getJedzenie());
-		assertEquals(3, towar.getMaterialy());
-		assertEquals(3, towar.getNarzedzia());
-		assertEquals(3, towar.getTowary());
-		assertEquals(3, towar.getUbrania());
-		assertEquals(3, towar.getZloto());
+		assertTrue(towar.getJedzenie() >= 0 && towar.getJedzenie() <= 5);
+		assertTrue(towar.getMaterialy() >= 0 && towar.getMaterialy() <= 5);
+		assertTrue(towar.getNarzedzia() >= 0 && towar.getNarzedzia() <= 5);
+		assertTrue(towar.getTowary() >= 0 && towar.getTowary() <= 5);
+		assertTrue(towar.getUbrania() >= 0 && towar.getUbrania() <= 5);
+		assertTrue(towar.getZloto() >= 0 && towar.getZloto() <= 5);
 	}
 
 }

@@ -27,6 +27,7 @@ public class GenerujNiebezpieczenstwo {
 	}
 	//Getery i Setery
 	public Niebezpieczenstwo getZabojca() { return Zabojca; }
+	public void setZabojca(Niebezpieczenstwo zabojca) { Zabojca = zabojca; }
 	public void setXniebezpieczenstwo(int xniebezpieczenstwo) { Xniebezpieczenstwo = xniebezpieczenstwo; }
 	public int getXniebezpieczenstwo() { return Xniebezpieczenstwo; }
 	public void setYniebezpieczenstwo(int yniebezpieczenstwo) { Yniebezpieczenstwo = yniebezpieczenstwo; }

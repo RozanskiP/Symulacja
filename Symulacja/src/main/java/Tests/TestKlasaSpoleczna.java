@@ -7,6 +7,7 @@ import KlasaSpoleczna.*;
 
 public class TestKlasaSpoleczna {
 
+	//Test odpowiedniego przypisania polozenia
 	@Test
 	public void testPolozenie() {
 		KlasaSpoleczna niew = new Niewolnicy(5, 15);
