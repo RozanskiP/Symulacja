@@ -1,7 +1,6 @@
 package Niebezpieczenstwo;
 
 import RandomoweLiczby.GeneratorRandom;
-import Zarzadzanie.Plansza;
 
 //Klasa Generujaca Niebezpieczenstwo i nadajaca im wartosci X i Y z planszy
 public class GenerujNiebezpieczenstwo {

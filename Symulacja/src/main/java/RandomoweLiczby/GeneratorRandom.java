@@ -4,7 +4,7 @@ import java.util.Random;
 //Generator losowych liczb w roznych zakresach
 public class GeneratorRandom {
 	
-	private static final int ZiarnoGeneratora = 47;
+	//private static final int ZiarnoGeneratora = 47;
 	
 	//Generator losowych liczb od 1 do Zakres
 		public static int RandomOd1(int Zakres) {

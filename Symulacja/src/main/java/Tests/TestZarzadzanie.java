@@ -15,7 +15,7 @@ import Zarzadzanie.*;
 import Budynki.*;
 
 public class TestZarzadzanie {
-	/*
+	
 	@Test
 	public void testZapisOdczyt() throws IOException  {
 		ZapisOdczyt zapodc = new ZapisOdczyt();
@@ -41,7 +41,7 @@ public class TestZarzadzanie {
 		assertTrue(zapodc.getMiejsce2Populacja() >= 0);
 		assertTrue(zapodc.getMiejsce3Populacja() >= 0);
 	}
-	*/
+	
 	
 	//Test prawid³owego ruchu poszczegolnych Klas
 	@Test
