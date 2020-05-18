@@ -1,3 +1,3 @@
 # Symulacja
 
-Dodatkowa funkcjonalność - stoworzenie Okienka wyswietlajacego działanie programu
+Dodatkowa funkcjonalność - stworzenie Okienka wyswietlajacego działanie programu
