@@ -1,19 +1,19 @@
-Wygra³a klasa : 				Szlachta
-zdobywaj¹c wymagan¹ populacje :	600
+Wygra³a klasa : 				Handlarze
+zdobywaj¹c wymagan¹ populacje :	402
 
 Klasa na drugim miejscu to : 	Mieszczanie
-zdobywaj¹c :					435
+zdobywaj¹c :					337
 
-A na 3 miejscu znalaz³a sie : 	Rzemieslnicy
-zdobywaj¹c : 					367
+A na 3 miejscu znalaz³a sie : 	Arystokracja
+zdobywaj¹c : 					214
 
-Na planszy pozosta³o : 1271 niezebranych Niebezpieczenstw
+Na planszy pozosta³o : 1185 niezebranych Niebezpieczenstw
 
-Na planszy pozosta³o : 2190 niezebranych Towarów
+Na planszy pozosta³o : 2028 niezebranych Towarów
 
 Klasy mia³y kontakt z (Pierwsza liczba to Towary a druga to Niebezpieczenstwa)
-Niewolnicy   : 103 : 17
-Rzemieslnicy : 191 : 24
-Arystokracja : 224 : 35
+Niewolnicy   : 148 : 20
+Rzemieslnicy : 209 : 29
+Arystokracja : 135 : 21
 
-Liczba Tura wynosi³a: 1354
+Liczba Tura wynosi³a: 1260
